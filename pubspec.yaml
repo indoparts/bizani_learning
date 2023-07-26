@@ -1,0 +1,40 @@
+name: bizani_learning
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter: 
+    sdk: flutter
+  introduction_screen: ^3.1.8
+  google_fonts: ^5.0.0
+  ripple_button: ^3.4.1
+  get_storage: ^2.1.1
+  animated_bottom_navigation_bar: ^1.2.0
+  carousel_slider: ^4.2.1
+  flutter_svg: ^0.22.0
+  lottie: ^2.5.0
+  sizer: ^2.0.15
+  device_preview: ^1.1.0
+  namefully: ^0.2.0
+  recase: ^4.1.0
+  flexi_chip: ^1.0.8
+
+dev_dependencies: 
+  flutter_lints: 2.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/images/klasifikasi/1/
+    - assets/images/klasifikasi/5/
+    - assets/images/introductions/
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
