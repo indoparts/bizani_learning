@@ -91,30 +91,14 @@ class CreerInfoView extends StatelessWidget {
                       ),
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 20),
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            Container(
-                              width: 1.w,
-                              color: Colors.red,
+                        child: FlexiChip(
+                          label: const Text('Filled Chip'),
+                          avatarText: const Text('FC'),
+                          style: FlexiChipStyle.filled(
+                            selectedStyle: FlexiChipStyle(
+                              borderRadius: BorderRadius.circular(25),
                             ),
-                            Container(
-                              width: 1.w,
-                              color: Colors.blue,
-                            ),
-                            Container(
-                              width: 1.w,
-                              color: Colors.green,
-                            ),
-                            Container(
-                              width: 1.w,
-                              color: Colors.yellow,
-                            ),
-                            Container(
-                              width: 1.w,
-                              color: Colors.orange,
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                       trailing: TextButton(

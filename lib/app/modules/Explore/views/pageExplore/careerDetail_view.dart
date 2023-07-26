@@ -16,7 +16,6 @@ class CareerDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ExploreCareerController());
-    print(myList);
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 243, 243, 243),
         appBar: AppBar(
