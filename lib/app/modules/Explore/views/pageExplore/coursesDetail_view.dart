@@ -4,7 +4,6 @@ import 'package:bizani_learning/app/components/globalWidget/searchInput.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../controllers/explorecourses_controller.dart';
 
@@ -39,13 +38,10 @@ class CoursesDetailView extends GetView {
                   align: TextAlign.center,
                 )),
             ExpandablePageView.builder(
-              clipBehavior: Clip.none,
-              controller: carouselController,
-              itemCount: 5,
-              itemBuilder: (_, index) => Card(
-                
-              )
-            ),
+                clipBehavior: Clip.none,
+                controller: carouselController,
+                itemCount: 5,
+                itemBuilder: (_, index) => Card()),
           ],
         ),
       )),
