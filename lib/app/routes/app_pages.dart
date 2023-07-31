@@ -137,7 +137,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EXPLORECAREER_INFO,
-      page: () => const CreerInfoView(),
+      page: () => CreerInfoView(),
       binding: ExploreCareerBinding(),
       transition: Transition.noTransition,
     ),

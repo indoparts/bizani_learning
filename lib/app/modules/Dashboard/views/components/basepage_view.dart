@@ -31,7 +31,7 @@ class BasepageView extends GetView {
     ];
     final DashboardController controller = Get.put(DashboardController());
     return Scaffold(
-        backgroundColor: bgColorX,
+        backgroundColor: bgColorscreenPrimary,
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(

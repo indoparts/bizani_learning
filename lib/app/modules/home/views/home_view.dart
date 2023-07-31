@@ -16,6 +16,7 @@ class HomeView extends GetView<HomeController> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        backgroundColor: bgColorscreenPrimary,
         appBar: AppBar(
           iconTheme: const IconThemeData(
             color: Colors.black87, //change your color here

@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          primaryIconTheme: IconThemeData(color: Colors.black),
           textTheme:
               GoogleFonts.plusJakartaSansTextTheme(Theme.of(context).textTheme),
         ),

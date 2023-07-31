@@ -15,19 +15,19 @@ class CoursesView extends GetView {
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const WidgetHomeCarousel(),
+          const InfCarousel(),
           const SizedBox(height: 20),
           WidgetHomeMore(
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const WidgetHomeCarousel(),
+          const InfCarousel(),
           const SizedBox(height: 20),
           WidgetHomeMore(
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const WidgetHomeCarousel(),
+          const InfCarousel(),
           const SizedBox(height: 20),
           WidgetHomeSurvel(
               txt: 'Apakah rekomendasi ini relevan?',

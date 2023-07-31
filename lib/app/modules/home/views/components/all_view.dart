@@ -15,11 +15,12 @@ class AllView extends GetView {
         child: SingleChildScrollView(
       child: Column(
         children: [
+          SizedBox(height: 2.h),
           WidgetHomeMore(
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const WidgetHomeCarousel(),
+          const InfCarousel(),
           SizedBox(height: 2.h),
           WidgetHomeSurvel(
               txt: 'Apakah rekomendasi ini relevan?',
