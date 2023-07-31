@@ -42,24 +42,9 @@ class CoursesDetailView extends GetView {
               clipBehavior: Clip.none,
               controller: carouselController,
               itemCount: 5,
-              itemBuilder: (_, index) => Container(
-                decoration: ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    side: const BorderSide(color: bgColor, width: 4),
-                  ),
-                  shadows: const [
-                    BoxShadow(
-                      color: bgColor,
-                    ),
-                  ],
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Center(
-                  child: Text('title $index'),
-                ),
-              ),
+              itemBuilder: (_, index) => Card(
+                
+              )
             ),
           ],
         ),
