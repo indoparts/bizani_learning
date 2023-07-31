@@ -18,6 +18,8 @@ abstract class Routes {
   static const EXPLORE = _Paths.EXPLORE;
   static const EXPLORECAREER = _Paths.EXPLORECAREER;
   static const EXPLORECOURSES = _Paths.EXPLORECOURSES;
+  static const EXPLORECOURSES_DETAIL = _Paths.EXPLORECOURSES_DETAIL;
+  static const EXPLORECOURSES_INFO = _Paths.EXPLORECOURSES_INFO;
   static const EXPLORECAREER_DETAIL = _Paths.EXPLORECAREER_DETAIL;
   static const EXPLORECAREER_INFO = _Paths.EXPLORECAREER_INFO;
   static const LEARN = _Paths.LEARN;
@@ -50,6 +52,8 @@ abstract class _Paths {
   static const EXPLORECAREER_DETAIL = '/explore-career-detail';
   static const EXPLORECAREER_INFO = '/explore-career-info';
   static const EXPLORECOURSES = '/explore-courses';
+  static const EXPLORECOURSES_DETAIL = '/explore-courses-detail';
+  static const EXPLORECOURSES_INFO = '/explore-courses-info';
   static const LEARN = '/learn';
   static const DASHBOARD = '/dashboard';
   static const CERTIFICATE = '/certificate';

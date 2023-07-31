@@ -2,6 +2,8 @@ import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/call_vie
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/chat_view.dart';
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/incall_view.dart';
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/support_view.dart';
+import 'package:bizani_learning/app/modules/Explore/views/pageExplore/coursesDetail_view.dart';
+import 'package:bizani_learning/app/modules/Explore/views/pageExplore/coursesInfo_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/Certificate/bindings/certificate_binding.dart';
@@ -144,6 +146,18 @@ class AppPages {
     GetPage(
       name: _Paths.EXPLORECOURSES,
       page: () => const CoursesView(),
+      binding: ExploreCoursesBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.EXPLORECOURSES_DETAIL,
+      page: () => CoursesDetailView(),
+      binding: ExploreCoursesBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.EXPLORECOURSES_INFO,
+      page: () => const CoursesInfoView(),
       binding: ExploreCoursesBinding(),
       transition: Transition.noTransition,
     ),

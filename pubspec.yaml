@@ -24,6 +24,7 @@ dependencies:
   recase: ^4.1.0
   flexi_chip: ^1.0.8
   infinite_carousel: ^1.0.3
+  expandable_page_view: ^1.0.17
 
 dev_dependencies: 
   flutter_lints: 2.0.1
