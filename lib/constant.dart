@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // const baseUrl = 'http://192.168.2.150:3333/client';
-const baseUrl = 'http://10.10.10.114:3333/client';
+const baseUrl = 'http://192.168.9.172:3333/client';
 
 const primaryColor = Color.fromARGB(255, 0, 121, 255);
 const secondaryColor = Color.fromARGB(255, 0, 223, 162);

@@ -34,7 +34,7 @@ class ChoiceRecomendation3Controller extends GetxController {
     }
   }
 
-  Future getData() async {
+  void getData() async {
     try {
       loadingData(true);
       List<CousesCategoryModel> response =
@@ -51,12 +51,12 @@ class ChoiceRecomendation3Controller extends GetxController {
     }
   }
 
-  Future refreshData() async {
+  void refreshData() async {
     _page = 1;
     hasMore.value = true;
     dataKlasifikasi.value = [];
 
-    await getData();
+    getData();
   }
 
   void setCousesCataegoryAct() async {

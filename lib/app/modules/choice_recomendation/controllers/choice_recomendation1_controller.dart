@@ -16,7 +16,7 @@ class ChoiceRecomendation1Controller extends GetxController {
     getDataGoals();
   }
 
-  Future getDataGoals() async {
+  void getDataGoals() async {
     try {
       isLoadingDataGoals(true);
       final response = await provider.getGoals();

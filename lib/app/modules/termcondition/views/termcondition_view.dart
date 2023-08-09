@@ -1,6 +1,7 @@
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import '../controllers/termcondition_controller.dart';
 
 class TermconditionView extends GetView<TermconditionController> {
@@ -33,7 +34,7 @@ class TermconditionView extends GetView<TermconditionController> {
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
                           subtitle: Padding(
-                              padding: const EdgeInsets.only(top: 15),
+                              padding: EdgeInsets.only(top: 15),
                               child: Text(controller.data[index].content)),
                         );
                       } else {
@@ -50,13 +51,14 @@ class TermconditionView extends GetView<TermconditionController> {
             Expanded(
                 child: Column(
               children: [
-                const SizedBox(height: 30),
-                const Center(
+                SizedBox(height: 5.h),
+                Center(
                     child: Text(
                   'Apakah anda menyetujuinya?',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
                 )),
-                const SizedBox(height: 20),
+                SizedBox(height: 2.h),
                 Obx(() => CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
                     title: const Text(
@@ -65,7 +67,7 @@ class TermconditionView extends GetView<TermconditionController> {
                     onChanged: (bool? value) {
                       controller.setuju1.value = value!;
                     })),
-                const SizedBox(height: 5),
+                SizedBox(height: 1.h),
                 Obx(() => CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
                     title: const Text(
@@ -74,7 +76,7 @@ class TermconditionView extends GetView<TermconditionController> {
                     onChanged: (bool? value) {
                       controller.setuju2.value = value!;
                     })),
-                const SizedBox(height: 40),
+                SizedBox(height: 2.h),
                 Obx(
                   () => (controller.setuju1.isTrue && controller.setuju2.isTrue)
                       ? GestureDetector(

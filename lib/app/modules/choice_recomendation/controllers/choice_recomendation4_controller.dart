@@ -15,7 +15,7 @@ class ChoiceRecomendation4Controller extends GetxController {
   var loadingForm = false.obs;
   var dataKlasifikasi = <CousesCategoryModel>[].obs;
 
-  Future getData() async {
+  void getData() async {
     try {
       loadingData(true);
       List<CousesCategoryModel> response =

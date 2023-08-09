@@ -1,3 +1,4 @@
+import 'package:bizani_learning/app/components/globalWidget/Text.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -44,13 +45,14 @@ class InfCarousel extends StatelessWidget {
                     SizedBox(
                       height: 1.h,
                     ),
-                    Text(
-                      'Lorem impsum dolor sit amet conceptetur',
-                      style: TextStyle(
-                          fontSize: 10.sp, fontWeight: FontWeight.bold),
+                    const TextApps(
+                      align: TextAlign.left,
+                      size: 10,
+                      stylefont: FontWeight.normal,
+                      text: 'Lorem impsum dolor sit amet conceptetur',
                     ),
                     SizedBox(
-                      height: 2.h,
+                      height: 1.h,
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +63,12 @@ class InfCarousel extends StatelessWidget {
                               Icons.redeem,
                               size: 15,
                             ),
-                            Text('Sertifikasi')
+                            TextApps(
+                              align: TextAlign.left,
+                              size: 10,
+                              stylefont: FontWeight.normal,
+                              text: 'Sertifikasi',
+                            )
                           ],
                         ),
                         Row(
@@ -70,7 +77,12 @@ class InfCarousel extends StatelessWidget {
                               Icons.timer,
                               size: 15,
                             ),
-                            Text('4-5 Jam')
+                            TextApps(
+                              align: TextAlign.left,
+                              size: 10,
+                              stylefont: FontWeight.normal,
+                              text: '4-5 Jam',
+                            )
                           ],
                         )
                       ],

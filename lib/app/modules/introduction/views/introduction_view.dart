@@ -24,6 +24,7 @@ class IntroductionView extends GetView<IntroductionController> {
 
   Widget _buildImage(String assetName, [double width = 350]) {
     return CircleAvatar(
+      backgroundColor: warningColor,
       radius: 150,
       child: Image.asset('assets/images/introductions/$assetName.png',
           width: width),

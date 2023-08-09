@@ -11,7 +11,7 @@ class ChoiceRecomendation5Controller extends GetxController {
   var isLoadingData = false.obs;
   var isLoadingPost = false.obs;
 
-  Future getData() async {
+  void getData() async {
     try {
       isLoadingData(true);
       final response = await provider.getStages();
