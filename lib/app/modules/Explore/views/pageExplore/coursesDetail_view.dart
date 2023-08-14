@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../controllers/explorecourses_controller.dart';
 
+// ignore: must_be_immutable
 class CoursesDetailView extends GetView {
   ExploreCoursesController controller = Get.put(ExploreCoursesController());
   final double paddingSize = 20;

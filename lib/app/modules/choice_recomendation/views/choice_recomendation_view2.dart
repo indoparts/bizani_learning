@@ -1,6 +1,7 @@
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../controllers/choice_recomendation2_controller.dart';
 
@@ -108,8 +109,8 @@ class ChoiceRecomendationView2 extends StatelessWidget {
                                                 vertical: 20.20,
                                                 horizontal: 15.10),
                                         leading: Image(
-                                          image: NetworkImage(state
-                                              .dataKlasifikasi[index].icon),
+                                          image: NetworkImage(
+                                              '$baseUrlImg/category-career/${state.dataKlasifikasi[index].icon}'),
                                         ),
                                         title: Text(
                                             state.dataKlasifikasi[index].name),
@@ -133,6 +134,9 @@ class ChoiceRecomendationView2 extends StatelessWidget {
                             }
                           })),
                     ),
+                  ),
+                  SizedBox(
+                    height: 10.h,
                   )
                 ],
               ))),

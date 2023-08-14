@@ -28,7 +28,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
-                backgroundColor: warningColor,
+                backgroundColor: circularAvatarColor,
                 child: Lottie.asset('assets/icons/splashscreen.json'),
                 radius: 120),
             const SizedBox(height: 20),
