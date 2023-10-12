@@ -1,6 +1,5 @@
 import 'package:bizani_learning/constant.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flexi_chip/flexi_chip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -14,7 +13,7 @@ class CardAverageAnualSalary extends StatelessWidget {
       elevation: 1,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             SizedBox(
@@ -31,7 +30,7 @@ class CardAverageAnualSalary extends StatelessWidget {
                 SizedBox(
                   width: 2.w,
                 ),
-                Icon(Icons.info_rounded)
+                const Icon(Icons.info_rounded)
               ],
             ),
             SizedBox(
@@ -58,7 +57,7 @@ class CardAverageAnualSalary extends StatelessWidget {
                       width: 5.w,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/indoflag.jpg'),
                           fit: BoxFit.fill,
                         ),
@@ -84,7 +83,7 @@ class CardAverageAnualSalary extends StatelessWidget {
                       width: 5.w,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/flag_malaysia.jpg'),
                           fit: BoxFit.fill,
                         ),
@@ -166,13 +165,13 @@ class Accordion extends StatelessWidget {
     return Card(
       child: ExpansionTile(
         backgroundColor: bgColor,
-        title: Text("Nilai minat Anda untuk mengejar karir ini untuk "),
+        title: const Text("Nilai minat Anda untuk mengejar karir ini untuk "),
         children: [
           Container(
             color: bgColor,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             width: double.infinity,
-            child: Text(
+            child: const Text(
                 "Nilai minat Anda untuk mengejar karir ini untuk mendapatkan rekomendasi karir & sepupu yang lebih baik"),
           )
         ],
@@ -221,7 +220,7 @@ class CardCarrerSimmiliar extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10.sp),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(
+                                contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                               )),
                           Card(
@@ -242,7 +241,7 @@ class CardCarrerSimmiliar extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10.sp),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(
+                                contentPadding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 10),
                               )),
                         ],

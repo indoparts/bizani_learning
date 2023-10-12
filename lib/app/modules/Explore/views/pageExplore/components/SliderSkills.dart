@@ -35,21 +35,25 @@ class SliderSkills extends StatelessWidget {
               Obx(() {
                 if (state.skillsData.isNotEmpty) {
                   return SizedBox(
-                    height: 4.h,
-                    child: Obx(() => PageView.builder(
-                        controller: controller,
-                        itemCount: state.skillsData.length,
-                        itemBuilder: (context, index) => Padding(padding: EdgeInsets.only(left:10, right:10),child:FlexiChip(
-                            label: Text(
-                              state.skillsData[index].skillname,
-                              style: TextStyle(
-                                  color: primaryColor, fontSize: 9.sp),
-                              textAlign: TextAlign.center,
-                            ),
-                            style: FlexiChipStyle.filled(
-                                color:
-                                    const Color.fromARGB(6, 217, 235, 255))))),
-                  ));
+                      height: 4.h,
+                      child: Obx(
+                        () => PageView.builder(
+                            controller: controller,
+                            itemCount: state.skillsData.length,
+                            itemBuilder: (context, index) => Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: FlexiChip(
+                                    label: Text(
+                                      state.skillsData[index].skillname,
+                                      style: TextStyle(
+                                          color: primaryColor, fontSize: 9.sp),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    style: FlexiChipStyle.filled(
+                                        color: const Color.fromARGB(
+                                            6, 217, 235, 255))))),
+                      ));
                 } else {
                   return const Center(
                       child: Text('Tidak ada kemampuan yang diperlukan'));
