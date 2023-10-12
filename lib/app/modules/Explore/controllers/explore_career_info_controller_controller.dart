@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bizani_learning/app/models/skills_career_model.dart';
 import 'package:bizani_learning/app/modules/Explore/providers/career_explore_provider.dart';
 import 'package:get/get.dart';
