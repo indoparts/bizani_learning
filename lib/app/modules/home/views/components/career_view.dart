@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../widget.dart';
+import 'components/Survey.dart';
 
 class CareerView extends GetView {
   const CareerView({Key? key}) : super(key: key);
@@ -22,12 +23,11 @@ class CareerView extends GetView {
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const InfCarousel(),
           const SizedBox(height: 20),
-          WidgetHomeSurvel(
-              txt: 'Apakah rekomendasi ini relevan?',
-              tapLIke: () {},
-              tapUnlIke: () {}),
+          Survey(
+            idKategoriKursus: 0,
+            urutan: 0,
+          ),
           const SizedBox(height: 30),
           WidgetHomeFooter(
               txt1:

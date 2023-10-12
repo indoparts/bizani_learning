@@ -1,6 +1,5 @@
 import 'package:bizani_learning/app/modules/Explore/controllers/explorecareer_controller.dart';
 import 'package:bizani_learning/constant.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -41,45 +40,45 @@ class CareerDetailView extends StatelessWidget {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(children: [
-              CarouselSlider.builder(
-                itemCount: 20,
-                itemBuilder: (context, index, realIndex) => InkWell(
-                  onTap: () => {},
-                  child: Card(
-                      elevation: 0,
-                      margin: const EdgeInsets.all(10),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage("assets/images/karir.jpg"),
-                              fit: BoxFit.cover,
-                              alignment: Alignment.topCenter,
-                            ),
-                          ),
-                          child: Container(
-                              color: const Color.fromARGB(209, 58, 58, 58),
-                              child: Padding(
-                                padding: const EdgeInsets.all(20),
-                                child: Center(
-                                  child: Text(
-                                    'Lorem Ipsum is simply dummy text of. $index',
-                                    style: TextStyle(
-                                        fontSize: 9.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: bgColor),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              )))),
-                ),
-                options: CarouselOptions(
-                  height: 15.h,
-                  viewportFraction: 0.4,
-                ),
-              ),
+              // CarouselSlider.builder(
+              //   itemCount: 20,
+              //   itemBuilder: (context, index, realIndex) => InkWell(
+              //     onTap: () => {},
+              //     child: Card(
+              //         elevation: 0,
+              //         margin: const EdgeInsets.all(10),
+              //         shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(10)),
+              //         clipBehavior: Clip.antiAliasWithSaveLayer,
+              //         child: Container(
+              //             decoration: const BoxDecoration(
+              //               image: DecorationImage(
+              //                 image: AssetImage("assets/images/karir.jpg"),
+              //                 fit: BoxFit.cover,
+              //                 alignment: Alignment.topCenter,
+              //               ),
+              //             ),
+              //             child: Container(
+              //                 color: const Color.fromARGB(209, 58, 58, 58),
+              //                 child: Padding(
+              //                   padding: const EdgeInsets.all(20),
+              //                   child: Center(
+              //                     child: Text(
+              //                       'Lorem Ipsum is simply dummy text of. $index',
+              //                       style: TextStyle(
+              //                           fontSize: 9.sp,
+              //                           fontWeight: FontWeight.bold,
+              //                           color: bgColor),
+              //                       textAlign: TextAlign.center,
+              //                     ),
+              //                   ),
+              //                 )))),
+              //   ),
+              //   options: CarouselOptions(
+              //     height: 15.h,
+              //     viewportFraction: 0.4,
+              //   ),
+              // ),
               SizedBox(
                 height: 3.h,
               ),

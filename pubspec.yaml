@@ -23,8 +23,9 @@ dependencies:
   namefully: ^0.2.0
   recase: ^4.1.0
   flexi_chip: ^1.0.8
-  infinite_carousel: ^1.0.3
   expandable_page_view: ^1.0.17
+  cached_network_image: ^3.3.0
+  flutter_widget_from_html_core: ^0.10.5
 
 dev_dependencies: 
   flutter_lints: 2.0.1

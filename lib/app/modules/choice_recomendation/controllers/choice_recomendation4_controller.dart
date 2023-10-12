@@ -60,7 +60,7 @@ class ChoiceRecomendation4Controller extends GetxController {
           'Perhatikan!',
           "Jumlah subkategori yang anda pilih saat ini adalah ${picker.length}, dan anda wajib memilih 3 subkategori kursus yang anda minati.",
           colorText: Colors.white,
-          backgroundColor: dagerColor,
+          backgroundColor: dangerColor,
           icon: const Icon(
             Icons.info,
             color: Colors.white,

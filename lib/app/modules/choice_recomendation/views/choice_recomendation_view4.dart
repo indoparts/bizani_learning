@@ -68,7 +68,7 @@ class ChoiceRecomendationView4 extends StatelessWidget {
                               return ListTile(
                                 leading: Image(
                                   image: NetworkImage(
-                                      state.dataKlasifikasi[index].icon),
+                                      '$baseUrlImg/category-learning&icon/${state.dataKlasifikasi[index].icon}'),
                                 ),
                                 title: Text(state.dataKlasifikasi[index].name,
                                     style: const TextStyle(
@@ -135,7 +135,8 @@ class ChoiceRecomendationView4 extends StatelessWidget {
                                 ),
                               );
                             }
-                          })))
+                          }))),
+                  const SizedBox(height: 100)
                 ],
               ))),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -1,12 +1,15 @@
 import "dart:convert";
 
+import "package:bizani_learning/constant.dart";
 import "package:flutter/foundation.dart";
+import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "../providers/StagesModel.dart";
 import '../providers/choice_providers.dart';
 
 class ChoiceRecomendation5Controller extends GetxController {
   ChoiceProviders provider = Get.put(ChoiceProviders());
-  final stagesData = [].obs;
+  final stagesData = <StagesModel>[].obs;
   var isChecked = 0.obs;
   var isLoadingData = false.obs;
   var isLoadingPost = false.obs;
@@ -14,8 +17,7 @@ class ChoiceRecomendation5Controller extends GetxController {
   void getData() async {
     try {
       isLoadingData(true);
-      final response = await provider.getStages();
-      List<String> fetch = List<String>.from(response['data']);
+      List<StagesModel> fetch = await provider.getStages();
       stagesData.addAll(fetch);
     } catch (e) {
       if (kDebugMode) print(e.toString());
@@ -31,10 +33,21 @@ class ChoiceRecomendation5Controller extends GetxController {
   void setStagesAct() async {
     try {
       isLoadingPost(true);
-      var dataPost = jsonEncode({'stages': stagesData[isChecked.value]});
+      var dataPost = jsonEncode({'stages': stagesData[isChecked.value].txt});
       final response = await provider.poststages(dataPost);
       if (response.statusCode == 200) {
         Get.toNamed("/home");
+      } else {
+        Get.snackbar(
+          'Terjadi kesalahan!',
+          "Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          colorText: bgColor,
+          backgroundColor: dangerColor,
+          icon: const Icon(
+            Icons.info,
+            color: bgColor,
+          ),
+        );
       }
     } catch (e) {
       if (kDebugMode) print(e.toString());

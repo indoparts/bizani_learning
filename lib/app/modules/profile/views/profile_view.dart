@@ -257,7 +257,7 @@ class ProfileView extends StatelessWidget {
                         ),
                         ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: dagerColor,
+                                primary: dangerColor,
                                 elevation: 0,
                                 padding: EdgeInsets.only(
                                     bottom: 10,

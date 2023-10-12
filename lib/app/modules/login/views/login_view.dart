@@ -135,6 +135,9 @@ class LoginView extends GetView<LoginController> {
                       ),
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 10.h,
                 )
               ],
             ),

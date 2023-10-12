@@ -36,10 +36,10 @@ class RecomendedView extends GetView<RecomendedController> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             MyButton(
               onTap: () {
-                Get.toNamed('/choice-recomendation');
+                Get.toNamed('/choice-recomendation1');
               },
               textBtn: 'Ambil Rekomendasi',
             ),

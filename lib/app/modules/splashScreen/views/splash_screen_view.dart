@@ -15,7 +15,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
   @override
   Widget build(BuildContext context) {
     final loginController = Get.put(LoginController());
-    Timer(Duration(seconds: 5), () => loginController.autoLogin());
+    Timer(const Duration(seconds: 5), () => loginController.autoLogin());
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
@@ -29,8 +29,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
           children: [
             CircleAvatar(
                 backgroundColor: circularAvatarColor,
-                child: Lottie.asset('assets/icons/splashscreen.json'),
-                radius: 120),
+                radius: 120,
+                child: Lottie.asset('assets/icons/splashscreen.json')),
             const SizedBox(height: 20),
             const Text(
               'Menunggu Prosses',

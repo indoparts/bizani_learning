@@ -1,4 +1,7 @@
+import 'package:bizani_learning/app/modules/Explore/providers/career_explore_provider.dart';
 import 'package:get/get.dart';
+
+import 'package:bizani_learning/app/modules/Explore/controllers/explore_career_info_controller_controller.dart';
 
 import '../controllers/explore_controller.dart';
 import '../controllers/explorecareer_controller.dart';
@@ -19,6 +22,16 @@ class ExploreCareerBinding extends Bindings {
     Get.lazyPut<ExploreCareerController>(
       () => ExploreCareerController(),
     );
+  }
+}
+
+class ExploreCareerInfo extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<ExploreCareerInfoControllerController>(
+      () => ExploreCareerInfoControllerController(),
+    );
+    Get.lazyPut<CareerExploreProvider>(() => CareerExploreProvider());
   }
 }
 

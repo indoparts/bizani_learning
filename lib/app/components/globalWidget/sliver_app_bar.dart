@@ -1,22 +1,24 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:bizani_learning/constant.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-// ignore: must_be_immutable
 class SliverAppbar extends StatelessWidget {
   final Color bgColorAppbar;
   final Color bgColorTextlight;
   final Color bgColorTextdark;
   final String bgImgText;
-  final String TxtTitle;
-  final String TxtSubitle;
+  final String txtTitle;
+  final String txtSubitle;
   final bool dividerTxtTitle;
   SliverAppbar(
       {super.key,
       required this.bgColorAppbar,
       required this.bgImgText,
-      required this.TxtTitle,
-      required this.TxtSubitle,
+      required this.txtTitle,
+      required this.txtSubitle,
       required this.dividerTxtTitle,
       required this.bgColorTextlight,
       required this.bgColorTextdark});
@@ -25,7 +27,7 @@ class SliverAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var indicatours =
-        TxtSubitle.length > 80 ? TxtSubitle.length : TxtSubitle.length * 2;
+        txtSubitle.length > 80 ? txtSubitle.length : txtSubitle.length * 2;
     return SliverAppBar(
         elevation: 0,
         backgroundColor: bgColorAppbar,
@@ -51,14 +53,14 @@ class SliverAppbar extends StatelessWidget {
           return FlexibleSpaceBar(
             centerTitle: true,
             title: AnimatedOpacity(
-              duration: Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 300),
               opacity: 1.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Text(TxtTitle,
+                    child: Text(txtTitle,
                         style: TextStyle(
                             color: top < 80.74
                                 ? bgColorTextdark
@@ -71,8 +73,8 @@ class SliverAppbar extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Container(
                         margin: EdgeInsets.only(
-                            left: TxtTitle.length * 2,
-                            right: TxtTitle.length * 2),
+                            left: txtTitle.length * 2,
+                            right: txtTitle.length * 2),
                         child: Divider(
                           color: Colors.yellow,
                           height: 3.h,
@@ -84,7 +86,7 @@ class SliverAppbar extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Text(
-                        TxtSubitle,
+                        txtSubitle,
                         style: TextStyle(
                             color: top < 80.74
                                 ? bgColorTextdark
@@ -97,16 +99,23 @@ class SliverAppbar extends StatelessWidget {
                 ],
               ),
             ),
-            background: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(bgImgText),
-                  fit: BoxFit.cover,
+            background: CachedNetworkImage(
+              imageUrl: bgImgText,
+              imageBuilder: (context, imageProvider) => Container(
+                decoration: BoxDecoration(
+                  image:
+                      DecorationImage(image: imageProvider, fit: BoxFit.cover),
+                ),
+                child: Container(
+                  color: const Color.fromARGB(204, 36, 36, 36),
                 ),
               ),
-              child: Container(
-                color: Color.fromARGB(204, 36, 36, 36),
-              ),
+              placeholder: (context, url) => Center(
+                  child: SizedBox(
+                      height: 1.h,
+                      width: 2.w,
+                      child: const CircularProgressIndicator())),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           );
         }));

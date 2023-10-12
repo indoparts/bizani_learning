@@ -5,33 +5,97 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 import '../widget.dart';
+import 'components/RowTitle.dart';
+import 'components/sliderKarir/karirSlider1.dart';
+import 'components/sliderKarir/karirSlider2.dart';
+import 'components/sliderKarir/karirSlider3.dart';
+import 'components/sliderKursus/kursusSlider1.dart';
+import 'components/sliderKursus/kursusSlider2.dart';
+import 'components/sliderKursus/kursusSlider3.dart';
+import 'components/Survey.dart';
 
 class AllView extends GetView {
   AllView({Key? key}) : super(key: key);
   final state = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
+    state.getDataListClientKursus();
+    state.getDataListClientKarir();
     return SafeArea(
         child: SingleChildScrollView(
       child: Column(
         children: [
           SizedBox(height: 2.h),
-          WidgetHomeMore(
-              txt: 'Karena kamu menyukai.....',
-              tapMOre: () => {},
-              txtMore: 'Lainya'),
-          const InfCarousel(),
-          SizedBox(height: 2.h),
-          WidgetHomeSurvel(
-              txt: 'Apakah rekomendasi ini relevan?',
-              tapLIke: () {},
-              tapUnlIke: () {}),
-          SizedBox(height: 2.h),
-          WidgetHomeCarouselInfo(
-            txt1: 'Karir untuk kamu',
-            txt2: 'Dalam (kategori yang dipilih)',
-            datas: const [1, 2, 3, 4, 5, 6, 7, 8, 9],
-          ),
+          Obx(() {
+            if (state.isLoadingListClientKursus.isTrue) {
+              return const Center(child: CircularProgressIndicator());
+            } else {
+              state.cekSurvey(state.ListclientKursus[0].id, 1);
+              state.cekSurvey(state.ListclientKursus[1].id, 2);
+              state.cekSurvey(state.ListclientKursus[2].id, 3);
+              return Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: RowTitle(text: state.ListclientKursus[0].name),
+                  ),
+                  kursusSlider1(
+                    idKursus: state.ListclientKursus[0].id,
+                  ),
+                  Obx(() => state.survey1.isTrue
+                      ? Survey(
+                          idKategoriKursus: state.ListclientKursus[0].id,
+                          urutan: 1,
+                        )
+                      : SizedBox(height: 5.h)),
+                  karirSlider1(
+                    txt1: 'Karir untuk kamu dalam',
+                    txt2: state.ListclientKarir[0].category[0].name,
+                    career_category_id:
+                        state.ListclientKarir[0].careerCategoryId,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: RowTitle(text: state.ListclientKursus[1].name),
+                  ),
+                  kursusSlider2(
+                    idKursus: state.ListclientKursus[1].id,
+                  ),
+                  Obx(() => state.survey2.isTrue
+                      ? Survey(
+                          idKategoriKursus: state.ListclientKursus[1].id,
+                          urutan: 2,
+                        )
+                      : SizedBox(height: 5.h)),
+                  karirSlider2(
+                    txt1: 'Karir untuk kamu dalam',
+                    txt2: state.ListclientKarir[1].category[0].name,
+                    career_category_id:
+                        state.ListclientKarir[1].careerCategoryId,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: RowTitle(text: state.ListclientKursus[2].name),
+                  ),
+                  kursusSlider3(
+                    idKursus: state.ListclientKursus[2].id,
+                  ),
+                  Obx(() => state.survey3.isTrue
+                      ? Survey(
+                          idKategoriKursus: state.ListclientKursus[2].id,
+                          urutan: 3,
+                        )
+                      : SizedBox(height: 5.h)),
+                  karirSlider3(
+                    txt1: 'Karir untuk kamu dalam',
+                    txt2: state.ListclientKarir[2].category[0].name,
+                    career_category_id:
+                        state.ListclientKarir[2].careerCategoryId,
+                  ),
+                ],
+              );
+            }
+          }),
           SizedBox(height: 3.h),
           WidgetHomeFooter(
               txt1:

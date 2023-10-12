@@ -1,5 +1,6 @@
-import 'package:bizani_learning/app/components/globalWidget/sliverAppBar.dart';
+import 'package:bizani_learning/app/components/globalWidget/sliver_app_bar.dart';
 import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,8 +15,8 @@ class CareerView extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppbar(
-                TxtTitle: 'Panduan Karir',
-                TxtSubitle:
+                txtTitle: 'Panduan Karir',
+                txtSubitle:
                     'Panduan karir Bizani membantu anda menemukan lebih banyak tentang jalur karir anda dan mengidentifikasi kursus yang tepat yang anda butuhkan untuk unggul dalam karir anda.',
                 bgColorAppbar: bgColor,
                 bgColorTextlight: bgColor,
@@ -69,7 +70,8 @@ class CareerView extends StatelessWidget {
                     itemCount: 20,
                     itemBuilder: (ctx, i) {
                       return InkWell(
-                          onTap: () => Get.toNamed('explore-career-detail'),
+                          onTap: () =>
+                              Get.offAllNamed(Routes.EXPLORECAREER_DETAIL),
                           child: Card(
                               elevation: 0,
                               margin: const EdgeInsets.all(10),

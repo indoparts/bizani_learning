@@ -20,20 +20,22 @@ Future<void> main() async {
   runApp(
     DevicePreview(
       enabled: true,
-      builder: (context) => MyApp(),
+      builder: (context) => const MyApp(),
     ),
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryIconTheme: IconThemeData(color: Colors.black),
+          primaryIconTheme: const IconThemeData(color: Colors.black),
           textTheme:
               GoogleFonts.plusJakartaSansTextTheme(Theme.of(context).textTheme),
         ),

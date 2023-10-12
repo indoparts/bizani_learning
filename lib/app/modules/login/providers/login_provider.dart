@@ -6,14 +6,14 @@ class LoginProvider extends GetConnect {
   final ls = GetStorage();
   @override
   void onInit() {
-    super.onInit();
     httpClient.baseUrl = baseUrl;
     httpClient.defaultContentType = "application/json";
+    httpClient.timeout = const Duration(seconds: 8);
+    super.onInit();
   }
 
-  Future postLogin(loginData) async {
-    String url = '/auth/login';
-    var res = await post(url, loginData);
+  Future postLogin(dataLogin) async {
+    final res = await post('/auth/login', dataLogin);
     return res;
   }
 
@@ -31,8 +31,7 @@ class LoginProvider extends GetConnect {
     final token = lsdata['token'];
     Map<String, String> requestHeaders = {'Authorization': 'Bearer $token'};
     String url = '/client-agreement/cek-client';
-    var res = await get(url,
-        contentType: "application/json", headers: requestHeaders);
+    var res = await get(url, headers: requestHeaders);
     return res;
   }
 

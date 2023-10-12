@@ -110,7 +110,7 @@ class ChoiceRecomendationView2 extends StatelessWidget {
                                                 horizontal: 15.10),
                                         leading: Image(
                                           image: NetworkImage(
-                                              '$baseUrlImg/category-career/${state.dataKlasifikasi[index].icon}'),
+                                              '$baseUrlImg/category-career&icon/${state.dataKlasifikasi[index].icon}'),
                                         ),
                                         title: Text(
                                             state.dataKlasifikasi[index].name),

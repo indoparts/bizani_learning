@@ -62,11 +62,21 @@ class ChoiceRecomendationView5 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
-                      child: Obx(() => ListView.builder(
-                          itemCount: state.stagesData.length,
-                          itemBuilder: (context, index) {
-                            if (index < state.stagesData.length) {
+                  Expanded(child: Obx(() {
+                    if (state.isLoadingData.isTrue) {
+                      return const Center(
+                        child: CircularProgressIndicator(
+                          color: primaryColor,
+                        ),
+                      );
+                    } else {
+                      if (state.stagesData.isNotEmpty) {
+                        return ListView.builder(
+                            itemCount: state.stagesData.length,
+                            itemBuilder: (context, index) {
+                              // ignore: non_constant_identifier_names
+                              var Images =
+                                  '$baseUrlImg/klasifikasi5/${state.stagesData[index].img}';
                               return Obx(() => InkWell(
                                     onTap: () => state.setChecked(index),
                                     child: Card(
@@ -81,12 +91,18 @@ class ChoiceRecomendationView5 extends StatelessWidget {
                                       ),
                                       elevation: 1,
                                       child: ListTile(
-                                        leading: Image(
-                                          image: AssetImage(
-                                              'assets/images/klasifikasi/5/${index + 1}.png'),
+                                        leading: ConstrainedBox(
+                                          constraints: const BoxConstraints(
+                                            minWidth: 44,
+                                            minHeight: 44,
+                                            maxWidth: 64,
+                                            maxHeight: 64,
+                                          ),
+                                          child: Image.network(Images,
+                                              fit: BoxFit.cover),
                                         ),
                                         title: Text(
-                                          state.stagesData[index] as String,
+                                          state.stagesData[index].txt,
                                         ),
                                         trailing: state.isChecked.value == index
                                             ? const Icon(Icons.check,
@@ -95,22 +111,12 @@ class ChoiceRecomendationView5 extends StatelessWidget {
                                       ),
                                     ),
                                   ));
-                            } else {
-                              if (state.isLoadingData.isTrue) {
-                                return const Padding(
-                                  padding: EdgeInsets.all(15),
-                                  child: Center(
-                                    child: CircularProgressIndicator(
-                                      color: primaryColor,
-                                    ),
-                                  ),
-                                );
-                              } else {
-                                return const Center(
-                                    child: Text('Data tidak tersedia!'));
-                              }
-                            }
-                          }))),
+                            });
+                      } else {
+                        return const Center(child: Text('Tidak ada data'));
+                      }
+                    }
+                  })),
                   const SizedBox(height: 90)
                 ],
               ))),

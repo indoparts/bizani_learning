@@ -51,7 +51,7 @@ class CallView extends StatelessWidget {
             ),
             CircleAvatar(
               radius: 30,
-              backgroundColor: dagerColor,
+              backgroundColor: dangerColor,
               child: IconButton(
                   onPressed: () => Get.toNamed('support'),
                   icon: Icon(

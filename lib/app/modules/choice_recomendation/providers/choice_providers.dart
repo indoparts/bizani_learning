@@ -3,6 +3,7 @@ import 'package:get_storage/get_storage.dart';
 import '../../../../constant.dart';
 import '../CareerCategoryModel.dart';
 import '../CousesCategoryModel.dart';
+import 'StagesModel.dart';
 
 class ChoiceProviders extends GetConnect {
   @override
@@ -24,10 +25,12 @@ class ChoiceProviders extends GetConnect {
     return response.body;
   }
 
-  Future getStages() async {
+  Future<List<StagesModel>> getStages() async {
     final response =
         await get('/client-classification/option-stages-classification');
-    return response.body;
+    final data = response.body;
+    return List<StagesModel>.from(
+        data['data'].map((e) => StagesModel.fromJson(e)));
   }
 
   Future<List<CareerCategoryModel>> getCareerCategory(

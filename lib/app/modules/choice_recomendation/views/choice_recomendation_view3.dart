@@ -2,6 +2,7 @@ import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../controllers/choice_recomendation3_controller.dart';
 
@@ -132,15 +133,12 @@ class ChoiceRecomendationView3 extends StatelessWidget {
                                                           Expanded(
                                                             child:
                                                                 Image.network(
-                                                              state
-                                                                  .dataKlasifikasi[
-                                                                      index]
-                                                                  .icon,
+                                                              '$baseUrlImg/category-learning&icon/${state.dataKlasifikasi[index].icon}',
                                                               fit: BoxFit.fill,
                                                             ),
                                                           ),
-                                                          const SizedBox(
-                                                            height: 20,
+                                                          SizedBox(
+                                                            height: 3.h,
                                                           ),
                                                           Center(
                                                             child: Text(
@@ -148,13 +146,15 @@ class ChoiceRecomendationView3 extends StatelessWidget {
                                                                   .dataKlasifikasi[
                                                                       index]
                                                                   .name,
-                                                              style:
-                                                                  const TextStyle(
-                                                                fontSize: 15,
+                                                              style: TextStyle(
+                                                                fontSize: 15.sp,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
                                                               ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
                                                             ),
                                                           )
                                                         ],
@@ -183,6 +183,9 @@ class ChoiceRecomendationView3 extends StatelessWidget {
                                         mainAxisExtent: 264,
                                       ),
                                     )),
+                              ),
+                              SizedBox(
+                                height: 20.h,
                               ),
                             ],
                           )))

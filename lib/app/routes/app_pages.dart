@@ -13,7 +13,7 @@ import '../modules/Dashboard/views/dashboard_view.dart';
 import '../modules/Explore/bindings/explore_binding.dart';
 import '../modules/Explore/views/explore_view.dart';
 import '../modules/Explore/views/pageExplore/careerDetail_view.dart';
-import '../modules/Explore/views/pageExplore/careerInfo_view.dart';
+import '../modules/Explore/views/pageExplore/career_info_view.dart';
 import '../modules/Explore/views/pageExplore/career_view.dart';
 import '../modules/Explore/views/pageExplore/courses_view.dart';
 import '../modules/Learn/bindings/learn_binding.dart';
@@ -140,7 +140,7 @@ class AppPages {
     GetPage(
       name: _Paths.EXPLORECAREER_INFO,
       page: () => CreerInfoView(),
-      binding: ExploreCareerBinding(),
+      binding: ExploreCareerInfo(),
       transition: Transition.noTransition,
     ),
     GetPage(

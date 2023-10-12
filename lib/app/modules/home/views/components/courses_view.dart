@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import 'components/Survey.dart';
+
 class CoursesView extends GetView {
   const CoursesView({Key? key}) : super(key: key);
   @override
@@ -15,24 +17,21 @@ class CoursesView extends GetView {
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const InfCarousel(),
           const SizedBox(height: 20),
           WidgetHomeMore(
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const InfCarousel(),
           const SizedBox(height: 20),
           WidgetHomeMore(
               txt: 'Karena kamu menyukai.....',
               tapMOre: () => {},
               txtMore: 'Lainya'),
-          const InfCarousel(),
           const SizedBox(height: 20),
-          WidgetHomeSurvel(
-              txt: 'Apakah rekomendasi ini relevan?',
-              tapLIke: () {},
-              tapUnlIke: () {}),
+          const Survey(
+            idKategoriKursus: 0,
+            urutan: 0,
+          ),
           const SizedBox(height: 30),
           WidgetHomeCousesCategory(),
           WidgetHomeFooter(

@@ -45,7 +45,7 @@ class InCallView extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: CircleAvatar(
           radius: 30,
-          backgroundColor: dagerColor,
+          backgroundColor: dangerColor,
           child: IconButton(
               onPressed: () => Get.toNamed('support'),
               icon: const Icon(

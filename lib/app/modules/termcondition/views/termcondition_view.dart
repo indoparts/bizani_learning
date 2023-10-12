@@ -34,7 +34,7 @@ class TermconditionView extends GetView<TermconditionController> {
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
                           subtitle: Padding(
-                              padding: EdgeInsets.only(top: 15),
+                              padding: const EdgeInsets.only(top: 15),
                               child: Text(controller.data[index].content)),
                         );
                       } else {

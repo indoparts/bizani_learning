@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:namefully/namefully.dart';
 
 class ProfileController extends GetxController {
-  final loginController = Get.put(LoginController());
-  final loginProvider = Get.put(LoginProvider());
+  LoginProvider provider = Get.put(LoginProvider());
+  LoginController login = Get.put(LoginController());
   var id = 0.obs;
   var frontname = ''.obs;
   var midname = ''.obs;
@@ -16,7 +16,7 @@ class ProfileController extends GetxController {
   var initial = ''.obs;
   void getprofile() async {
     try {
-      final res = await loginProvider.getProfile();
+      final res = await provider.getProfile();
       if (res.statusCode == 200) {
         var parse = res.body['data'];
         id(parse['id']);
@@ -39,6 +39,6 @@ class ProfileController extends GetxController {
   }
 
   void logout() async {
-    loginController.logout();
+    login.logout();
   }
 }
