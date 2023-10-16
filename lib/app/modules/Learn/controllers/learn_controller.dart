@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bizani_learning/app/components/controllers/PageIndexController.dart';
+import 'package:bizani_learning/app/components/controllers/page_index_controller.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,6 +26,7 @@ class LearnController extends GetxController {
   void onInit() {
     page.changePage(2);
     if (id != null) {
+      print(id);
       getLearnContent(id);
     }
     super.onInit();

@@ -2,7 +2,7 @@ import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/PageIndexController.dart';
+import '../controllers/page_index_controller.dart';
 
 class BottomNavigation extends StatelessWidget {
   final page = Get.find<PageIndexController>();

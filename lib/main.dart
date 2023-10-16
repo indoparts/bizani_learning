@@ -6,11 +6,12 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
-import 'app/components/controllers/PageIndexController.dart';
+import 'app/components/controllers/page_index_controller.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
   await GetStorage.init();
+  // ignore: unused_local_variable
   final page = Get.put(PageIndexController(), permanent: true);
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([

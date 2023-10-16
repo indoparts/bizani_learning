@@ -1,4 +1,4 @@
-import 'package:bizani_learning/app/components/globalWidget/LazzyImage.dart';
+import 'package:bizani_learning/app/components/globalWidget/lazzy_image.dart';
 import 'package:bizani_learning/app/components/globalWidget/Text.dart';
 import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';

@@ -15,7 +15,7 @@ class HomeController extends GetxController {
   // ignore: non_constant_identifier_names
   var ListclientKursus = <KursusKategoriClientModel>[].obs;
   var isLoadingListClientKursus = false.obs;
-  var ListclientKarir = <KarirClientKategoriModel>[].obs;
+  var listclientKarir = <KarirClientKategoriModel>[].obs;
   var isLoadingListClientKarir = false.obs;
   void getDataListClientKursus() async {
     try {
@@ -37,7 +37,7 @@ class HomeController extends GetxController {
       isLoadingListClientKarir(true);
       List<KarirClientKategoriModel> response =
           await provider.getKarirCategory();
-      ListclientKarir.addAll(response);
+      listclientKarir.addAll(response);
     } catch (e) {
       if (kDebugMode) {
         print(e);

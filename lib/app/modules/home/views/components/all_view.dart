@@ -50,9 +50,9 @@ class AllView extends GetView {
                       : SizedBox(height: 5.h)),
                   karirSlider1(
                     txt1: 'Karir untuk kamu dalam',
-                    txt2: state.ListclientKarir[0].category[0].name,
+                    txt2: state.listclientKarir[0].category[0].name,
                     career_category_id:
-                        state.ListclientKarir[0].careerCategoryId,
+                        state.listclientKarir[0].careerCategoryId,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10),
@@ -69,9 +69,9 @@ class AllView extends GetView {
                       : SizedBox(height: 5.h)),
                   karirSlider2(
                     txt1: 'Karir untuk kamu dalam',
-                    txt2: state.ListclientKarir[1].category[0].name,
+                    txt2: state.listclientKarir[1].category[0].name,
                     career_category_id:
-                        state.ListclientKarir[1].careerCategoryId,
+                        state.listclientKarir[1].careerCategoryId,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10),
@@ -88,9 +88,9 @@ class AllView extends GetView {
                       : SizedBox(height: 5.h)),
                   karirSlider3(
                     txt1: 'Karir untuk kamu dalam',
-                    txt2: state.ListclientKarir[2].category[0].name,
+                    txt2: state.listclientKarir[2].category[0].name,
                     career_category_id:
-                        state.ListclientKarir[2].careerCategoryId,
+                        state.listclientKarir[2].careerCategoryId,
                   ),
                 ],
               );
