@@ -2,8 +2,8 @@ import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/call_vie
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/chat_view.dart';
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/incall_view.dart';
 import 'package:bizani_learning/app/modules/Dashboard/views/pageSupport/support_view.dart';
-import 'package:bizani_learning/app/modules/Explore/views/pageExplore/coursesDetail_view.dart';
-import 'package:bizani_learning/app/modules/Explore/views/pageExplore/coursesInfo_view.dart';
+import 'package:bizani_learning/app/modules/Explore/views/pageExplore/courses_detail_view.dart';
+import 'package:bizani_learning/app/modules/Explore/views/pageExplore/courses_info_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/Certificate/bindings/certificate_binding.dart';
@@ -12,7 +12,7 @@ import '../modules/Dashboard/bindings/dashboard_binding.dart';
 import '../modules/Dashboard/views/dashboard_view.dart';
 import '../modules/Explore/bindings/explore_binding.dart';
 import '../modules/Explore/views/explore_view.dart';
-import '../modules/Explore/views/pageExplore/careerDetail_view.dart';
+import '../modules/Explore/views/pageExplore/career_detail_view.dart';
 import '../modules/Explore/views/pageExplore/career_info_view.dart';
 import '../modules/Explore/views/pageExplore/career_view.dart';
 import '../modules/Explore/views/pageExplore/courses_view.dart';
@@ -51,161 +51,162 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const SPLASHSCREEN = Routes.SPLASH_SCREEN;
+  // ignore: constant_identifier_names
+  static const SPLASHSCREEN = Routes.splashscreen;
 
   static final routes = [
     GetPage(
-        name: _Paths.HOME,
+        name: _Paths.home,
         page: () => const HomeView(),
         binding: HomeBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.INTRODUCTION,
+        name: _Paths.introduction,
         page: () => const IntroductionView(),
         binding: IntroductionBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.INTRODUCTION2,
+        name: _Paths.introduction2,
         page: () => const Introduction2View(),
         binding: Introduction2Binding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.LOGIN,
+        name: _Paths.login,
         page: () => const LoginView(),
         binding: LoginBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.DAFTAR,
+        name: _Paths.daftar,
         page: () => const DaftarView(),
         binding: DaftarBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.TERMCONDITION,
+        name: _Paths.termcondition,
         page: () => const TermconditionView(),
         binding: TermconditionBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.RECOMENDED,
+        name: _Paths.reccomend,
         page: () => const RecomendedView(),
         binding: RecomendedBinding(),
         transition: Transition.noTransition),
     GetPage(
-      name: _Paths.CHOICE_RECOMENDATION1,
+      name: _Paths.choicereccomendation1,
       page: () => const ChoiceRecomendationView1(),
       binding: ChoiceRecomendation1Binding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.CHOICE_RECOMENDATION2,
+      name: _Paths.choicereccomendation2,
       page: () => const ChoiceRecomendationView2(),
       binding: ChoiceRecomendation2Binding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.CHOICE_RECOMENDATION3,
+      name: _Paths.choicereccomendation3,
       page: () => const ChoiceRecomendationView3(),
       binding: ChoiceRecomendation3Binding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.CHOICE_RECOMENDATION4,
+      name: _Paths.choicereccomendation4,
       page: () => const ChoiceRecomendationView4(),
       binding: ChoiceRecomendation4Binding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.CHOICE_RECOMENDATION5,
+      name: _Paths.choicereccomendation5,
       page: () => const ChoiceRecomendationView5(),
       binding: ChoiceRecomendation5Binding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORE,
+      name: _Paths.explore,
       page: () => const ExploreView(),
       binding: ExploreBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECAREER,
+      name: _Paths.explorekarir,
       page: () => const CareerView(),
       binding: ExploreCareerBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECAREER_DETAIL,
+      name: _Paths.explorekarirdetail,
       page: () => CareerDetailView(),
       binding: ExploreCareerBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECAREER_INFO,
+      name: _Paths.explorekaririnfo,
       page: () => CreerInfoView(),
       binding: ExploreCareerInfo(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECOURSES,
+      name: _Paths.explorekursus,
       page: () => const CoursesView(),
       binding: ExploreCoursesBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECOURSES_DETAIL,
+      name: _Paths.explorekursusdetail,
       page: () => CoursesDetailView(),
       binding: ExploreCoursesBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.EXPLORECOURSES_INFO,
+      name: _Paths.explorekursusinfo,
       page: () => const CoursesInfoView(),
       binding: ExploreCoursesBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.LEARN,
-      page: () => LearnView(),
+      name: _Paths.learn,
+      page: () => const LearnView(),
       binding: LearnBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.DASHBOARD,
+      name: _Paths.dashboard,
       page: () => const DashboardView(),
       binding: DashboardBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-      name: _Paths.CERTIFICATE,
+      name: _Paths.certificate,
       page: () => const CertificateView(),
       binding: CertificateBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(
-        name: _Paths.PROFILE,
+        name: _Paths.profile,
         page: () => const ProfileView(),
         binding: ProfileBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.SPLASH_SCREEN,
+        name: _Paths.splashscreen,
         page: () => const SplashScreenView(),
         binding: SplashScreenBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.SUPPORT,
+        name: _Paths.support,
         page: () => const SupportView(),
         binding: SupportBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.SUPPORT_CALL,
+        name: _Paths.supportcall,
         page: () => const CallView(),
         binding: SupportBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.SUPPORT_INCALL,
+        name: _Paths.supportincall,
         page: () => const InCallView(),
         binding: SupportBinding(),
         transition: Transition.noTransition),
     GetPage(
-        name: _Paths.SUPPORT_CHAT,
+        name: _Paths.supportchat,
         page: () => const ChatView(),
         binding: SupportBinding(),
         transition: Transition.noTransition),

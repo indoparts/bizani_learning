@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../providers/CareerModel.dart';
+import '../../../../models/home_models/career_model.dart';
 import '../../providers/home_provider.dart';
 
 class Karir3Controller extends GetxController {
@@ -12,20 +12,26 @@ class Karir3Controller extends GetxController {
   var currentPage = 1.obs;
   var lastPage = 0.obs;
 
-  void getSlider(int career_category_id) async {
+  void getSlider(int careerCategoryId) async {
     try {
       isLoadingDataKarir(true);
       final response =
-          await provider.getKarir(currentPage.value, career_category_id);
+          await provider.getKarir(currentPage.value, careerCategoryId);
       List<CareerModel> fetch =
           careerModelFromJson(jsonEncode(response['data']));
       dataKarir.addAllIf(fetch.isNotEmpty, fetch);
       lastPage(response['meta']['last_page']);
       currentPage++;
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     } finally {
       isLoadingDataKarir(false);
     }

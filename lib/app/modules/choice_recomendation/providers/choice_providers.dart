@@ -1,9 +1,9 @@
+import 'package:bizani_learning/app/models/choice_reccomendation_model/career_category_model.dart';
+import 'package:bizani_learning/app/models/choice_reccomendation_model/couses_category_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../../constant.dart';
-import '../CareerCategoryModel.dart';
-import '../CousesCategoryModel.dart';
-import 'StagesModel.dart';
+import '../../../models/choice_reccomendation_model/stages_model.dart';
 
 class ChoiceProviders extends GetConnect {
   @override

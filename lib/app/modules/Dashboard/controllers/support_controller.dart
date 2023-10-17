@@ -10,14 +10,4 @@ class SupportController extends GetxController {
     final lsdata = ls.read("client") as Map<String, dynamic>;
     username(lsdata['fullname']);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

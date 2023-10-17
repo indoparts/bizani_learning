@@ -1,3 +1,4 @@
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
 import 'package:bizani_learning/app/modules/Explore/controllers/explore_career_info_controller_controller.dart';
 import 'package:intl/intl.dart';
 import 'package:bizani_learning/constant.dart';
@@ -86,15 +87,7 @@ class CardAverageAnualSalary extends StatelessWidget {
                           'Tidak ada data tentang pendapatan pada karir ini!'));
                 }
               } else {
-                return Center(
-                  child: SizedBox(
-                    height: 1.h,
-                    width: 2.w,
-                    child: const CircularProgressIndicator(
-                      color: primaryColor,
-                    ),
-                  ),
-                );
+                return const LoadingProccess();
               }
             })
           ],

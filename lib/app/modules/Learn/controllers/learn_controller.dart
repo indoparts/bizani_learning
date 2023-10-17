@@ -4,7 +4,7 @@ import 'package:bizani_learning/app/components/controllers/page_index_controller
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../providers/OptionMaterialModel.dart';
+import '../providers/option_material_model.dart';
 import '../providers/learn_providers.dart';
 
 class LearnController extends GetxController {
@@ -12,7 +12,7 @@ class LearnController extends GetxController {
   LearnProviders provider = Get.put(LearnProviders());
   dynamic id = Get.arguments;
 
-  var judul_materi = ''.obs;
+  var judulMateri = ''.obs;
   var listOption = <OptionMaterialModel>[];
   var listOptionLoading = false.obs;
   var content = ''.obs;
@@ -24,9 +24,7 @@ class LearnController extends GetxController {
   final selectedText = ''.obs;
   @override
   void onInit() {
-    page.changePage(2);
     if (id != null) {
-      print(id);
       getLearnContent(id);
     }
     super.onInit();
@@ -35,18 +33,23 @@ class LearnController extends GetxController {
   void getLearnContent(id) async {
     listOptionLoading(true);
     try {
-      print(id);
       final request = await provider.getMateri(id);
       List<OptionMaterialModel> fetch = optionMaterialModelFromJson(
           jsonEncode(request['data']['contenttitle']));
       listOption.addAllIf(fetch.isNotEmpty, fetch);
-      judul_materi(request['data']['find']['title']);
+      judulMateri(request['data']['find']['title']);
       final index = listOption.first;
       setSelected(index.id);
-    } catch (e) {
-      print(e.toString());
-    } finally {
+      page.changePage(2);
       listOptionLoading(false);
+    } catch (e) {
+      GetSnackBar(
+        title: "Terjadi kesalahan saat memuat data",
+        message:
+            "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+        icon: const Icon(Icons.dangerous),
+        duration: const Duration(seconds: 3),
+      );
     }
   }
 
@@ -59,10 +62,15 @@ class LearnController extends GetxController {
       contentPage(parse['page']);
       contentLastPage(parse['page'] + 1);
       contentFirstPage(parse['page'] + 1);
-    } catch (e) {
-      print(e.toString());
-    } finally {
       contentLoading(false);
+    } catch (e) {
+      GetSnackBar(
+        title: "Terjadi kesalahan saat memuat data",
+        message:
+            "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+        icon: const Icon(Icons.dangerous),
+        duration: const Duration(seconds: 3),
+      );
     }
   }
 
@@ -75,10 +83,15 @@ class LearnController extends GetxController {
       contentPage(parse['meta']['current_page']);
       contentLastPage(parse['meta']['last_page']);
       contentFirstPage(parse['meta']['first_page']);
-    } catch (e) {
-      print(e.toString());
-    } finally {
       contentLoading(false);
+    } catch (e) {
+      GetSnackBar(
+        title: "Terjadi kesalahan saat memuat data",
+        message:
+            "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+        icon: const Icon(Icons.dangerous),
+        duration: const Duration(seconds: 3),
+      );
     }
   }
 

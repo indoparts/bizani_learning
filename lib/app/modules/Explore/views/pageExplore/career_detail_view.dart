@@ -31,7 +31,7 @@ class CareerDetailView extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () => {},
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               splashRadius: 20,
             )
           ],

@@ -1,10 +1,10 @@
 import "dart:convert";
 
+import "package:bizani_learning/app/models/choice_reccomendation_model/career_category_model.dart";
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "../../../../constant.dart";
-import "../CareerCategoryModel.dart";
 import '../providers/choice_providers.dart';
 
 class ChoiceRecomendation2Controller extends GetxController {

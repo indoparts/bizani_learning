@@ -67,7 +67,7 @@ class CardRelatedCareer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.offAllNamed(Routes.EXPLORECAREER_INFO, arguments: id),
+      onTap: () => Get.offAllNamed(Routes.explorekaririnfo, arguments: id),
       child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),

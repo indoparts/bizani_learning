@@ -31,7 +31,7 @@ class ChatView extends StatelessWidget {
         backgroundColor: Colors.white,
         flexibleSpace: SafeArea(
           child: Container(
-            padding: EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 16),
             child: Row(
               children: <Widget>[
                 IconButton(
@@ -39,20 +39,20 @@ class ChatView extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back,
                     color: Colors.black,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 2,
                 ),
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: NetworkImage(
                       "https://randomuser.me/api/portraits/men/5.jpg"),
                   maxRadius: 20,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 12,
                 ),
                 Expanded(
@@ -60,12 +60,12 @@ class ChatView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "Kriss Benwat",
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
                       Text(
@@ -79,7 +79,7 @@ class ChatView extends StatelessWidget {
                 IconButton(
                     splashRadius: 20,
                     onPressed: () => Get.toNamed('support-call'),
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.call,
                       color: Colors.black54,
                     )),
@@ -93,12 +93,12 @@ class ChatView extends StatelessWidget {
           ListView.builder(
             itemCount: messages.length,
             shrinkWrap: true,
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            physics: NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Container(
-                padding:
-                    EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
+                padding: const EdgeInsets.only(
+                    left: 14, right: 14, top: 10, bottom: 10),
                 child: Align(
                   alignment: (messages[index].messageType == "receiver"
                       ? Alignment.topLeft
@@ -108,12 +108,12 @@ class ChatView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       color: (messages[index].messageType == "receiver"
                           ? Colors.grey.shade200
-                          : Color.fromARGB(255, 206, 233, 255)),
+                          : const Color.fromARGB(255, 206, 233, 255)),
                     ),
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Text(
                       messages[index].messageContent,
-                      style: TextStyle(fontSize: 15),
+                      style: const TextStyle(fontSize: 15),
                     ),
                   ),
                 ),
@@ -132,7 +132,7 @@ class ChatView extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              prefixIcon: Icon(
+              prefixIcon: const Icon(
                 Icons.chat,
                 color: Colors.black,
               ),
@@ -141,12 +141,14 @@ class ChatView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   InkWell(
+                    // ignore: avoid_print
                     onTap: () => print('vn'),
-                    child: Icon(Icons.mic, color: Colors.black),
+                    child: const Icon(Icons.mic, color: Colors.black),
                   ),
                   InkWell(
+                    // ignore: avoid_print
                     onTap: () => print('send'),
-                    child: Icon(Icons.send, color: Colors.black),
+                    child: const Icon(Icons.send, color: Colors.black),
                   ),
                   SizedBox(
                     width: 2.w,

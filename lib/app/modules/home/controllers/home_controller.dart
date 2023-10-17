@@ -1,9 +1,7 @@
-import 'package:bizani_learning/constant.dart';
-import 'package:flutter/foundation.dart';
+import 'package:bizani_learning/app/models/home_models/karir_client_kategori_model.dart';
+import 'package:bizani_learning/app/models/home_models/kursus_kategori_client_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../providers/KarirClientKategoriModel.dart';
-import '../providers/KursusKategoriClientModel.dart';
 import '../providers/home_provider.dart';
 
 class HomeController extends GetxController {
@@ -12,54 +10,60 @@ class HomeController extends GetxController {
   var survey2 = true.obs;
   var survey3 = true.obs;
 
-  // ignore: non_constant_identifier_names
-  var ListclientKursus = <KursusKategoriClientModel>[].obs;
-  var isLoadingListClientKursus = false.obs;
+  var listclientKursus = <KursusKategoriClientModel>[].obs;
   var listclientKarir = <KarirClientKategoriModel>[].obs;
-  var isLoadingListClientKarir = false.obs;
+  var loading = false.obs;
   void getDataListClientKursus() async {
     try {
-      isLoadingListClientKursus(true);
+      loading(true);
       List<KursusKategoriClientModel> response =
           await provider.getKursusCategory();
-      ListclientKursus.addAll(response);
+      listclientKursus.addAll(response);
+      loading(false);
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
-    } finally {
-      isLoadingListClientKursus(false);
+      GetSnackBar(
+        title: "Terjadi kesalahan saat memuat data kursus",
+        message:
+            "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+        icon: const Icon(Icons.dangerous),
+        duration: const Duration(seconds: 3),
+      );
     }
   }
 
   void getDataListClientKarir() async {
     try {
-      isLoadingListClientKarir(true);
+      loading(true);
       List<KarirClientKategoriModel> response =
           await provider.getKarirCategory();
       listclientKarir.addAll(response);
+      loading(false);
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
-    } finally {
-      isLoadingListClientKarir(false);
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data kursus",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     }
   }
 
   void cekSurvey(int idKategoriKursus, int urutan) async {
     try {
+      loading(true);
       final request = await provider.cekSurvey(idKategoriKursus);
       survey1(request.body['data']);
     } catch (e) {
-      Get.snackbar(
-        'Terjadi kesalahan!',
-        "Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
-        colorText: bgColor,
-        backgroundColor: dangerColor,
-        icon: const Icon(
-          Icons.info,
-          color: bgColor,
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data kursus",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
         ),
       );
     }
@@ -86,14 +90,13 @@ class HomeController extends GetxController {
         }
       }
     } catch (e) {
-      Get.snackbar(
-        'Terjadi kesalahan!',
-        "Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
-        colorText: bgColor,
-        backgroundColor: dangerColor,
-        icon: const Icon(
-          Icons.info,
-          color: bgColor,
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data kursus",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
         ),
       );
     }

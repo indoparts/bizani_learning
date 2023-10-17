@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final optionMaterialModel = optionMaterialModelFromJson(jsonString);
-
 import 'dart:convert';
 
 List<OptionMaterialModel> optionMaterialModelFromJson(String str) =>

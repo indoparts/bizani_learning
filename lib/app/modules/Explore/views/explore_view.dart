@@ -1,4 +1,4 @@
-import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/components/views/bottom_navigation.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class ExploreView extends GetView<ExploreController> {
       body: SafeArea(
           child: SingleChildScrollView(
               child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Center(
                       child: Column(
                     children: [
@@ -61,7 +61,7 @@ class ExploreView extends GetView<ExploreController> {
                               ),
                             ),
                             child: Container(
-                                color: Color.fromARGB(179, 0, 102, 255),
+                                color: const Color.fromARGB(179, 0, 102, 255),
                                 child: const Padding(
                                   padding: EdgeInsets.only(top: 30, bottom: 30),
                                   child: ListTile(
@@ -96,7 +96,7 @@ class ExploreView extends GetView<ExploreController> {
                               ),
                             ),
                             child: Container(
-                                color: Color.fromARGB(199, 0, 182, 55),
+                                color: const Color.fromARGB(199, 0, 182, 55),
                                 child: const Padding(
                                   padding: EdgeInsets.only(top: 30, bottom: 30),
                                   child: ListTile(

@@ -21,7 +21,7 @@ class SupportView extends GetView {
             padding: const EdgeInsets.all(10),
             child: Center(
               child: Text(
-                'Hi, ' + controller.username.value.titleCase,
+                'Hi, ${controller.username.value.titleCase}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.sp,
@@ -97,7 +97,7 @@ class SupportView extends GetView {
                         ),
                         SizedBox(height: 2.h),
                         Card(
-                          color: Color.fromARGB(255, 230, 230, 230),
+                          color: const Color.fromARGB(255, 230, 230, 230),
                           child: Padding(
                             padding: const EdgeInsets.all(20),
                             child: Column(
@@ -121,7 +121,7 @@ class SupportView extends GetView {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
-                                    prefixIcon: Icon(Icons.search),
+                                    prefixIcon: const Icon(Icons.search),
                                     filled: true,
                                     hintStyle:
                                         TextStyle(color: Colors.grey[800]),

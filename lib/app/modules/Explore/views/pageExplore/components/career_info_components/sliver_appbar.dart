@@ -1,3 +1,4 @@
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
 import 'package:bizani_learning/app/modules/Explore/controllers/explore_career_info_controller_controller.dart';
 import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';
@@ -26,7 +27,7 @@ class SliverAppbar extends StatelessWidget {
             radius: 10,
             child: IconButton(
                 splashRadius: 10,
-                onPressed: () => Get.offAllNamed(Routes.HOME),
+                onPressed: () => Get.offAllNamed(Routes.home),
                 icon: const Icon(
                   Icons.arrow_back,
                   color: Colors.black,
@@ -69,11 +70,7 @@ class SliverAppbar extends StatelessWidget {
                           color: const Color.fromARGB(204, 36, 36, 36),
                         ),
                       ),
-                      placeholder: (context, url) => Center(
-                          child: SizedBox(
-                              height: 1.h,
-                              width: 2.w,
-                              child: const CircularProgressIndicator())),
+                      placeholder: (context, url) => const LoadingProccess(),
                       errorWidget: (context, url, error) =>
                           const Icon(Icons.error),
                     );
@@ -85,12 +82,7 @@ class SliverAppbar extends StatelessWidget {
                             child: const Text('Tidak ada sampul gambar!')));
                   }
                 } else {
-                  return Center(
-                    child: SizedBox(
-                        height: 1.h,
-                        width: 2.w,
-                        child: const CircularProgressIndicator()),
-                  );
+                  return const LoadingProccess();
                 }
               }));
         }));

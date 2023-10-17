@@ -94,7 +94,7 @@ class ProfileView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.all(20),
+                                padding: const EdgeInsets.all(20),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
@@ -142,7 +142,7 @@ class ProfileView extends StatelessWidget {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
+                                                    const Text(
                                                       'Nama Tengah',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -150,7 +150,7 @@ class ProfileView extends StatelessWidget {
                                                     ),
                                                     Text(
                                                       controller.midname.value,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontWeight: FontWeight
                                                               .normal),
                                                     ),
@@ -164,7 +164,7 @@ class ProfileView extends StatelessWidget {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
+                                                    const Text(
                                                       'Nama Belakang',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -172,7 +172,7 @@ class ProfileView extends StatelessWidget {
                                                     ),
                                                     Text(
                                                       controller.backname.value,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontWeight: FontWeight
                                                               .normal),
                                                     ),
@@ -186,7 +186,7 @@ class ProfileView extends StatelessWidget {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
+                                                    const Text(
                                                       'Nama Lengkap',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -194,7 +194,7 @@ class ProfileView extends StatelessWidget {
                                                     ),
                                                     Text(
                                                       controller.fullname.value,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontWeight: FontWeight
                                                               .normal),
                                                     ),
@@ -208,7 +208,7 @@ class ProfileView extends StatelessWidget {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
+                                                    const Text(
                                                       'Username',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -216,7 +216,7 @@ class ProfileView extends StatelessWidget {
                                                     ),
                                                     Text(
                                                       controller.username.value,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontWeight: FontWeight
                                                               .normal),
                                                     ),
@@ -230,7 +230,7 @@ class ProfileView extends StatelessWidget {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
+                                                    const Text(
                                                       'Email',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -238,7 +238,7 @@ class ProfileView extends StatelessWidget {
                                                     ),
                                                     Text(
                                                       controller.email.value,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontWeight: FontWeight
                                                               .normal),
                                                     ),
@@ -257,7 +257,7 @@ class ProfileView extends StatelessWidget {
                         ),
                         ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: dangerColor,
+                                backgroundColor: dangerColor,
                                 elevation: 0,
                                 padding: EdgeInsets.only(
                                     bottom: 10,

@@ -20,7 +20,7 @@ class WidgetBtn extends StatelessWidget {
     return type == 'elevate'
         ? ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
-                primary: color,
+                backgroundColor: color,
                 padding: const EdgeInsets.symmetric(
                     horizontal: defaultPadding + 20 * 1.5, vertical: 15),
                 textStyle:
@@ -31,8 +31,8 @@ class WidgetBtn extends StatelessWidget {
           )
         : OutlinedButton.icon(
             style: OutlinedButton.styleFrom(
+                foregroundColor: color,
                 side: BorderSide(color: color, width: 1),
-                primary: color,
                 padding: const EdgeInsets.symmetric(
                     horizontal: defaultPadding + 20 * 1.5, vertical: 15),
                 textStyle:
@@ -45,6 +45,7 @@ class WidgetBtn extends StatelessWidget {
 }
 
 class MyTextField extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final bool obscureText;
@@ -70,7 +71,7 @@ class MyTextField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.blueAccent.shade100),
             ),
-            fillColor: Color.fromARGB(255, 238, 248, 253),
+            fillColor: const Color.fromARGB(255, 238, 248, 253),
             filled: true,
             hintText: hintText,
             hintStyle: TextStyle(color: Colors.blueAccent[500])),

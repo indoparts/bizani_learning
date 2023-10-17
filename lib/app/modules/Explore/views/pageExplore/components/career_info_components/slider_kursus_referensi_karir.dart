@@ -1,3 +1,4 @@
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
 import 'package:bizani_learning/app/modules/Explore/controllers/explore_career_info_controller_controller.dart';
 import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';
@@ -45,24 +46,9 @@ class SliderKursusReferensiKarir extends StatelessWidget {
                     return const EmptyData();
                   }
                 } else {
-                  return const Loding();
+                  return const LoadingProccess();
                 }
               }))),
-    );
-  }
-}
-
-class Loding extends StatelessWidget {
-  const Loding({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        height: 1.h,
-        width: 2.w,
-        child: const CircularProgressIndicator(),
-      ),
     );
   }
 }
@@ -141,7 +127,7 @@ class CardKursus extends StatelessWidget {
                             minimumSize: Size.fromHeight(5.h),
                             backgroundColor: primaryColor),
                         onPressed: () =>
-                            Get.offAllNamed(Routes.LEARN, arguments: idKursus),
+                            Get.offAllNamed(Routes.learn, arguments: idKursus),
                         child: const Text('MULAI SEKARANG'),
                       )
                     ],

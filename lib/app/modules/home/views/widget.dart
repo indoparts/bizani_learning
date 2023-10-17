@@ -18,7 +18,7 @@ class WidgetHomeCarouselInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 500.w,
-      color: Color.fromARGB(26, 182, 182, 182),
+      color: const Color.fromARGB(26, 182, 182, 182),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,24 +48,24 @@ class WidgetHomeCarouselInfo extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               child: ListTile(
                                 title: Text('Title $i'),
                                 trailing: IconButton(
                                     onPressed: () => {},
-                                    icon: Icon(Icons.navigate_next)),
+                                    icon: const Icon(Icons.navigate_next)),
                               ))),
                       Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               child: ListTile(
                                 title: Text('Title Karir $i'),
                                 trailing: IconButton(
                                     onPressed: () => {},
-                                    icon: Icon(Icons.navigate_next)),
+                                    icon: const Icon(Icons.navigate_next)),
                               )))
                     ],
                   );
@@ -160,7 +160,7 @@ class WidgetHomeCousesCategory extends StatelessWidget {
                         child: Column(
                           children: [
                             Padding(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10.0),
                                   child: Image.network(

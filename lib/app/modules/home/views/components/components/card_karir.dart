@@ -35,13 +35,14 @@ class CardKarir extends StatelessWidget {
                 radius: 20,
                 backgroundColor: Colors.black12,
                 child: IconButton(
-                  icon: const Icon(
-                    Icons.chevron_right,
-                    color: Colors.black,
-                  ),
-                  onPressed: () => Get.offAllNamed(Routes.EXPLORECAREER_INFO,
-                      arguments: idSubKategoriKarir.toInt()),
-                ),
+                    icon: const Icon(
+                      Icons.chevron_right,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      Get.offAllNamed(Routes.explorekaririnfo,
+                          arguments: idSubKategoriKarir);
+                    }),
               ),
             ],
           ),

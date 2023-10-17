@@ -41,7 +41,7 @@ class CallView extends StatelessWidget {
               backgroundColor: secondaryColor,
               child: IconButton(
                   onPressed: () => Get.toNamed('support-incall'),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.call_sharp,
                     color: bgColor,
                   )),
@@ -54,7 +54,7 @@ class CallView extends StatelessWidget {
               backgroundColor: dangerColor,
               child: IconButton(
                   onPressed: () => Get.toNamed('support'),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.call_end_sharp,
                     color: bgColor,
                   )),

@@ -1,4 +1,4 @@
-import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/components/views/bottom_navigation.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +60,7 @@ class HomeView extends GetView<HomeController> {
           backgroundColor: bgColor,
         ),
         body: TabBarView(
-          children: [AllView(), CareerView(), CoursesView()],
+          children: [AllView(), const CareerView(), const CoursesView()],
         ),
         bottomNavigationBar: BottomNavigation(),
       ),

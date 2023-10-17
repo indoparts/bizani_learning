@@ -1,4 +1,4 @@
-import 'package:bizani_learning/app/components/globalWidget/loadingView.dart';
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
 import 'package:bizani_learning/app/modules/Explore/controllers/explore_career_info_controller_controller.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';

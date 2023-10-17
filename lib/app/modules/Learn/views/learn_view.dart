@@ -1,4 +1,5 @@
-import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
+import 'package:bizani_learning/app/components/views/bottom_navigation.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
@@ -20,13 +21,7 @@ class LearnView extends GetView<LearnController> {
               style: const TextStyle(color: Colors.black),
             );
           } else {
-            return SizedBox(
-              height: 2.h,
-              width: 2.w,
-              child: const CircularProgressIndicator(
-                color: primaryColor,
-              ),
-            );
+            return const LoadingProccess();
           }
         }),
         elevation: 1,
@@ -48,13 +43,7 @@ class LearnView extends GetView<LearnController> {
                 },
                 onSelected: (value) => controller.setSelected(value));
           } else {
-            return SizedBox(
-              height: 2.h,
-              width: 2.w,
-              child: const CircularProgressIndicator(
-                color: primaryColor,
-              ),
-            );
+            return const LoadingProccess();
           }
         }),
       ),
@@ -66,13 +55,7 @@ class LearnView extends GetView<LearnController> {
             child: HtmlWidget(controller.content.value),
           );
         } else {
-          return const Center(
-            child: SizedBox(
-              child: CircularProgressIndicator(
-                color: primaryColor,
-              ),
-            ),
-          );
+          return const LoadingProccess();
         }
       })),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

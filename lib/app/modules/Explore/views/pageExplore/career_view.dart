@@ -1,5 +1,5 @@
 import 'package:bizani_learning/app/components/globalWidget/sliver_app_bar.dart';
-import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/components/views/bottom_navigation.dart';
 import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
@@ -65,13 +65,13 @@ class CareerView extends StatelessWidget {
                 ),
                 ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.all(10),
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: const EdgeInsets.all(10),
                     itemCount: 20,
                     itemBuilder: (ctx, i) {
                       return InkWell(
                           onTap: () =>
-                              Get.offAllNamed(Routes.EXPLORECAREER_DETAIL),
+                              Get.offAllNamed(Routes.explorekarirdetail),
                           child: Card(
                               elevation: 0,
                               margin: const EdgeInsets.all(10),

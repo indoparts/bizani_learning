@@ -1,11 +1,11 @@
-import 'package:bizani_learning/app/components/views/BottomNavigation.dart';
+import 'package:bizani_learning/app/components/views/bottom_navigation.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/dashboard_controller.dart';
-import 'components/basepage_view.dart';
+import 'components/base_page_view.dart';
 import 'components/support_view.dart';
 
 class DashboardView extends GetView<DashboardController> {
@@ -39,9 +39,9 @@ class DashboardView extends GetView<DashboardController> {
           ),
           backgroundColor: bgColor,
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            BasepageView(),
+            BasePageView(),
             SupportView(),
           ],
         ),

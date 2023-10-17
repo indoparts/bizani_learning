@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class PageIndexController extends GetxController {
-  RxInt pageIndex = 0.obs;
+  var pageIndex = 0.obs;
 
   void changePage(int i) async {
     pageIndex(i);

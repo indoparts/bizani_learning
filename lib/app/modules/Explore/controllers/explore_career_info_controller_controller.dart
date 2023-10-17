@@ -1,11 +1,11 @@
-import 'package:bizani_learning/app/models/average_salary_career_model.dart';
-import 'package:bizani_learning/app/models/career_courses_model.dart';
-import 'package:bizani_learning/app/models/career_holland_code_model.dart';
-import 'package:bizani_learning/app/models/career_related_model.dart';
-import 'package:bizani_learning/app/models/career_sub_category_info_model.dart';
-import 'package:bizani_learning/app/models/skills_career_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/average_salary_career_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_courses_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_holland_code_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_related_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_sub_category_info_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/skills_career_model.dart';
 import 'package:bizani_learning/app/modules/Explore/providers/career_explore_provider.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExploreCareerInfoControllerController extends GetxController {
@@ -41,32 +41,46 @@ class ExploreCareerInfoControllerController extends GetxController {
   }
 
   void getCareerInfo() async {
-    loading(true);
-    final req = await provider.getShow(idCareerSubCategory);
-    icon(req['icon']);
-    coverImg(req['cover_img']);
-    name(req['name']);
-    slug(req['slug']);
-    careerCategoryId(req['career_category_id']);
-    description(req['description']);
-    List<SkillsCareerModel> fetchSkills = (req['skill'] as List)
-        .map((data) => SkillsCareerModel.fromJson(data))
-        .toList();
-    skillsData.addAll(fetchSkills);
-    List<AverageSalaryCareerModel> fetchSalary = (req['salary'] as List)
-        .map((data) => AverageSalaryCareerModel.fromJson(data))
-        .toList();
-    salaryData.addAll(fetchSalary);
-    List<CareerSubCategoryInfoModel> fetchInfo = (req['info'] as List)
-        .map((data) => CareerSubCategoryInfoModel.fromJson(data))
-        .toList();
-    infoData.addAll(fetchInfo);
-    List<CareerHollandCodeModel> fetchHollandCode = (req['hollandCode'] as List)
-        .map((data) => CareerHollandCodeModel.fromJson(data))
-        .toList();
-    hollandCodeData.addAll(fetchHollandCode);
-    getCareerRelated();
-    loading(false);
+    try {
+      loading(true);
+      final req = await provider.getShow(idCareerSubCategory);
+      icon(req['icon']);
+      coverImg(req['cover_img']);
+      name(req['name']);
+      slug(req['slug']);
+      careerCategoryId(req['career_category_id']);
+      description(req['description']);
+      List<SkillsCareerModel> fetchSkills = (req['skill'] as List)
+          .map((data) => SkillsCareerModel.fromJson(data))
+          .toList();
+      skillsData.addAll(fetchSkills);
+      List<AverageSalaryCareerModel> fetchSalary = (req['salary'] as List)
+          .map((data) => AverageSalaryCareerModel.fromJson(data))
+          .toList();
+      salaryData.addAll(fetchSalary);
+      List<CareerSubCategoryInfoModel> fetchInfo = (req['info'] as List)
+          .map((data) => CareerSubCategoryInfoModel.fromJson(data))
+          .toList();
+      infoData.addAll(fetchInfo);
+      List<CareerHollandCodeModel> fetchHollandCode =
+          (req['hollandCode'] as List)
+              .map((data) => CareerHollandCodeModel.fromJson(data))
+              .toList();
+      hollandCodeData.addAll(fetchHollandCode);
+      getCareerRelated();
+    } catch (e) {
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    } finally {
+      loading(false);
+    }
   }
 
   void getCareerKursus() async {
@@ -77,9 +91,15 @@ class ExploreCareerInfoControllerController extends GetxController {
       careerKursus.addAllIf(response.isNotEmpty, response);
       careerKursusCurrentPage++;
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     } finally {
       isLoadingCareerKursus(false);
     }
@@ -92,9 +112,15 @@ class ExploreCareerInfoControllerController extends GetxController {
           await provider.getCekCareerInterestedClient(idCareerSubCategory);
       showRateInterested(response == 'true' ? true : false);
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     } finally {
       loading(false);
     }
@@ -111,9 +137,15 @@ class ExploreCareerInfoControllerController extends GetxController {
         showRateInterested(true);
       }
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     } finally {
       loading(false);
     }
@@ -127,9 +159,15 @@ class ExploreCareerInfoControllerController extends GetxController {
       careerRelated.addAllIf(response.isNotEmpty, response);
       careerRelatedCurrentPage++;
     } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
+      Get.showSnackbar(
+        GetSnackBar(
+          title: "Terjadi kesalahan saat memuat data karir",
+          message:
+              "dengan pesan kesalahan ${e.toString()} Mohon maaf atas ketidak nyamananya, kami akan terus memperbaiki ini untuk menjadi lebih baik lagi.",
+          icon: const Icon(Icons.dangerous),
+          duration: const Duration(seconds: 3),
+        ),
+      );
     } finally {
       isLoadingCareerRelated(false);
     }

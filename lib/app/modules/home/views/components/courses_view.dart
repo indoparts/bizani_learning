@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'components/Survey.dart';
+import 'components/survey.dart';
 
 class CoursesView extends GetView {
   const CoursesView({Key? key}) : super(key: key);

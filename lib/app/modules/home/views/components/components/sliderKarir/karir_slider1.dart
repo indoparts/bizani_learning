@@ -1,27 +1,27 @@
+import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
 import 'package:bizani_learning/app/modules/home/controllers/karir/karir1_controller.dart';
-import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../CardKarir.dart';
+import '../card_karir.dart';
 
-class karirSlider1 extends StatelessWidget {
-  final int career_category_id;
+class KarirSlider1 extends StatelessWidget {
+  final int careerCategoryId;
   final String txt1;
   final String txt2;
-  const karirSlider1({
+  const KarirSlider1({
     super.key,
     required this.txt1,
     required this.txt2,
-    required this.career_category_id,
+    required this.careerCategoryId,
   });
   @override
   Widget build(BuildContext context) {
     final PageController controller =
         PageController(initialPage: 0, viewportFraction: 0.7);
     final state = Get.find<Karir1Controller>();
-    state.getSlider(career_category_id);
+    state.getSlider(careerCategoryId);
     final dataParse = state.dataKarir;
     return Container(
       width: 500.w,
@@ -47,11 +47,7 @@ class karirSlider1 extends StatelessWidget {
             height: 12.h,
             child: Obx(() {
               if (state.isLoadingDataKarir.isTrue) {
-                return const Center(
-                  child: CircularProgressIndicator(
-                    color: primaryColor,
-                  ),
-                );
+                return const LoadingProccess();
               } else {
                 if (dataParse.isNotEmpty) {
                   return PageView.builder(
@@ -60,7 +56,7 @@ class karirSlider1 extends StatelessWidget {
                       onPageChanged: (i) {
                         if (state.currentPage.value <= state.lastPage.value) {
                           if (i == (dataParse.length - 1)) {
-                            state.getSlider(career_category_id);
+                            state.getSlider(careerCategoryId);
                           }
                         }
                       },

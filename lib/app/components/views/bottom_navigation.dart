@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../controllers/page_index_controller.dart';
 
 class BottomNavigation extends StatelessWidget {
+  BottomNavigation({super.key});
   final page = Get.find<PageIndexController>();
   @override
   Widget build(BuildContext context) {

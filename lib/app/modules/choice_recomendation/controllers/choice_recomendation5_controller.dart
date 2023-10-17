@@ -4,7 +4,7 @@ import "package:bizani_learning/constant.dart";
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
-import "../providers/StagesModel.dart";
+import '../../../models/choice_reccomendation_model/stages_model.dart';
 import '../providers/choice_providers.dart';
 
 class ChoiceRecomendation5Controller extends GetxController {

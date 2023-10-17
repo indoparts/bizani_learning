@@ -1,7 +1,6 @@
 import 'dart:convert';
-
-import 'package:bizani_learning/app/models/career_courses_model.dart';
-import 'package:bizani_learning/app/models/career_related_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_courses_model.dart';
+import 'package:bizani_learning/app/models/careers_info_models/career_related_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../../constant.dart';

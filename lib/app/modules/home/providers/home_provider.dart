@@ -1,10 +1,10 @@
 import 'dart:convert';
 
+import 'package:bizani_learning/app/models/home_models/karir_client_kategori_model.dart';
+import 'package:bizani_learning/app/models/home_models/kursus_kategori_client_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../../constant.dart';
-import 'KarirClientKategoriModel.dart';
-import 'KursusKategoriClientModel.dart';
 
 class HomeProvider extends GetConnect {
   @override
@@ -41,9 +41,9 @@ class HomeProvider extends GetConnect {
     return data;
   }
 
-  Future getKarir(int page, int career_category_id) async {
+  Future getKarir(int page, int careerCategoryId) async {
     final response = await get(
-        "/career-subcategory/index?page=$page&limit=5&career_category_id=$career_category_id");
+        "/career-subcategory/index?page=$page&limit=5&career_category_id=$careerCategoryId");
     final data = response.body['data'];
     return data;
   }

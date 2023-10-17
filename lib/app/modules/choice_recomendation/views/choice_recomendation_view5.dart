@@ -37,7 +37,7 @@ class ChoiceRecomendationView5 extends StatelessWidget {
       ),
       body: SafeArea(
           child: Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                   const SizedBox(

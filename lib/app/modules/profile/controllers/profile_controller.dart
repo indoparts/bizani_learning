@@ -1,5 +1,6 @@
 import 'package:bizani_learning/app/modules/login/controllers/login_controller.dart';
 import 'package:bizani_learning/app/modules/login/providers/login_provider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:namefully/namefully.dart';
 
@@ -34,7 +35,9 @@ class ProfileController extends GetxController {
             name1.initials(withMid: true)[2]);
       }
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 

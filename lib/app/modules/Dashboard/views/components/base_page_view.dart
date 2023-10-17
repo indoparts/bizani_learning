@@ -8,7 +8,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-class BasepageView extends GetView {
+class BasePageView extends GetView {
+  const BasePageView({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> cardData = [
@@ -35,7 +37,7 @@ class BasepageView extends GetView {
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               const SizedBox(height: 10),
@@ -66,7 +68,7 @@ class BasepageView extends GetView {
                       ),
                     ],
                   ),
-                  Icon(Icons.celebration_outlined, size: 60)
+                  const Icon(Icons.celebration_outlined, size: 60)
                 ],
               ),
               SizedBox(height: 5.h),
@@ -82,11 +84,11 @@ class BasepageView extends GetView {
                               ? Icons.alarm
                               : Icons.redeem_outlined;
                   var color = (i == 0)
-                      ? Color.fromARGB(255, 0, 223, 162)
+                      ? const Color.fromARGB(255, 0, 223, 162)
                       : (i == 1)
-                          ? Color.fromARGB(255, 0, 121, 255)
+                          ? const Color.fromARGB(255, 0, 121, 255)
                           : (i == 2)
-                              ? Color.fromARGB(255, 255, 0, 96)
+                              ? const Color.fromARGB(255, 255, 0, 96)
                               : Colors.black87;
                   return Card(
                       elevation: 0,
@@ -94,7 +96,7 @@ class BasepageView extends GetView {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Column(
                           children: [
                             CircleAvatar(
@@ -106,7 +108,7 @@ class BasepageView extends GetView {
                                 color: bgColor,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -128,7 +130,8 @@ class BasepageView extends GetView {
               Card(
                 elevation: 0,
                 child: Padding(
-                    padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                    padding:
+                        const EdgeInsets.only(top: 10, left: 10, right: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,23 +139,23 @@ class BasepageView extends GetView {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'title',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
-                            Text(
+                            const Text(
                               'subtitle',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             TextButton.icon(
                                 onPressed: () => {},
-                                icon: Icon(Icons.edit),
-                                label: Text(
+                                icon: const Icon(Icons.edit),
+                                label: const Text(
                                   'Afiliasi',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -160,7 +163,7 @@ class BasepageView extends GetView {
                                 ))
                           ],
                         ),
-                        Container(
+                        SizedBox(
                           height: 80,
                           width: 60,
                           child: SvgPicture.asset(

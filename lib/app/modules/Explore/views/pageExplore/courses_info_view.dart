@@ -9,9 +9,9 @@ class CoursesInfoView extends GetView {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Courses info'),
+        title: const Text('Courses info'),
       ),
-      body: SafeArea(
+      body: const SafeArea(
           child: SingleChildScrollView(
         child: Column(
           children: [],

@@ -11,7 +11,7 @@ class SupportView extends GetView<SupportController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
         backgroundColor: bgColor,
         title: const Text(
@@ -22,7 +22,7 @@ class SupportView extends GetView<SupportController> {
       ),
       body: SafeArea(
           child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: ListView.builder(
                   itemCount: 30,
                   itemBuilder: (ctx, i) {
@@ -38,7 +38,7 @@ class SupportView extends GetView<SupportController> {
                                   fit: BoxFit.cover)),
                           title: Text(
                             'Nama Users $i',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text('Users Divisi $i'),
                           trailing: Wrap(
@@ -46,11 +46,11 @@ class SupportView extends GetView<SupportController> {
                               IconButton(
                                   splashRadius: 20,
                                   onPressed: () => Get.toNamed('support-call'),
-                                  icon: Icon(Icons.call)),
+                                  icon: const Icon(Icons.call)),
                               IconButton(
                                   splashRadius: 20,
                                   onPressed: () => Get.toNamed('support-chat'),
-                                  icon: Icon(Icons.message))
+                                  icon: const Icon(Icons.message))
                             ],
                           ),
                         ));

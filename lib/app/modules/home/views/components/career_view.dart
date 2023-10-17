@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../widget.dart';
-import 'components/Survey.dart';
+import 'components/survey.dart';
 
 class CareerView extends GetView {
   const CareerView({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class CareerView extends GetView {
               tapMOre: () => {},
               txtMore: 'Lainya'),
           const SizedBox(height: 20),
-          Survey(
+          const Survey(
             idKategoriKursus: 0,
             urutan: 0,
           ),

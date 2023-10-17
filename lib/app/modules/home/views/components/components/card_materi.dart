@@ -1,5 +1,5 @@
 import 'package:bizani_learning/app/components/globalWidget/lazzy_image.dart';
-import 'package:bizani_learning/app/components/globalWidget/Text.dart';
+import 'package:bizani_learning/app/components/globalWidget/text_apps.dart';
 import 'package:bizani_learning/app/routes/app_pages.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
@@ -8,12 +8,12 @@ import 'package:sizer/sizer.dart';
 
 class CardMateri extends StatelessWidget {
   final int id;
-  final String Images;
+  final String images;
   final String title;
   final bool question;
   const CardMateri(
       {Key? key,
-      required this.Images,
+      required this.images,
       required this.title,
       required this.question,
       required this.id})
@@ -34,7 +34,7 @@ class CardMateri extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20), // Image border
                 child: SizedBox.fromSize(
                   size: const Size.fromHeight(100), // Image radius
-                  child: LazzyImage(ImgUrl: Images),
+                  child: LazzyImage(imgUrl: images),
                 ),
               ),
               SizedBox(
@@ -90,7 +90,7 @@ class CardMateri extends StatelessWidget {
               SizedBox(height: 2.h),
               GestureDetector(
                 onTap: () =>
-                    Get.offAllNamed(Routes.LEARN, arguments: id.toInt()),
+                    Get.offAllNamed(Routes.learn, arguments: id.toInt()),
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(

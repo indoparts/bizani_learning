@@ -1,6 +1,6 @@
 import 'package:expandable_page_view/expandable_page_view.dart';
-import 'package:bizani_learning/app/components/globalWidget/Text.dart';
-import 'package:bizani_learning/app/components/globalWidget/searchInput.dart';
+import 'package:bizani_learning/app/components/globalWidget/text_apps.dart';
+import 'package:bizani_learning/app/components/globalWidget/search_input.dart';
 import 'package:bizani_learning/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +9,7 @@ import '../../controllers/explorecourses_controller.dart';
 
 // ignore: must_be_immutable
 class CoursesDetailView extends GetView {
+  @override
   ExploreCoursesController controller = Get.put(ExploreCoursesController());
   final double paddingSize = 20;
   CoursesDetailView({super.key});
@@ -31,8 +32,7 @@ class CoursesDetailView extends GetView {
                 ),
               ),
               const Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: TextApps(
                     size: 11,
                     stylefont: FontWeight.bold,
