@@ -60,7 +60,7 @@ class HomeView extends GetView<HomeController> {
           backgroundColor: bgColor,
         ),
         body: TabBarView(
-          children: [AllView(), const CareerView(), const CoursesView()],
+          children: [AllView(), CareerView(), const CoursesView()],
         ),
         bottomNavigationBar: BottomNavigation(),
       ),

@@ -12,7 +12,7 @@ class Karir2Controller extends GetxController {
   var currentPage = 1.obs;
   var lastPage = 0.obs;
 
-  void getSlider(int careerCategoryId) async {
+  Future getSlider(int careerCategoryId) async {
     try {
       isLoadingDataKarir(true);
       final response =
@@ -22,6 +22,8 @@ class Karir2Controller extends GetxController {
       dataKarir.addAllIf(fetch.isNotEmpty, fetch);
       lastPage(response['meta']['last_page']);
       currentPage++;
+      isLoadingDataKarir(false);
+      return fetch;
     } catch (e) {
       Get.showSnackbar(
         GetSnackBar(
@@ -32,8 +34,6 @@ class Karir2Controller extends GetxController {
           duration: const Duration(seconds: 3),
         ),
       );
-    } finally {
-      isLoadingDataKarir(false);
     }
   }
 }

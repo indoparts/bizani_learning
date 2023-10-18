@@ -1,5 +1,7 @@
 import 'package:bizani_learning/app/components/globalWidget/loading_view.dart';
+import 'package:bizani_learning/app/modules/home/controllers/home_controller.dart';
 import 'package:bizani_learning/app/modules/home/controllers/karir/karir2_controller.dart';
+import 'package:bizani_learning/app/modules/home/views/components/components/survey_karir.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -10,19 +12,22 @@ class KarirSlider2 extends StatelessWidget {
   final int careerCategoryId;
   final String txt1;
   final String txt2;
-  const KarirSlider2({
+  KarirSlider2({
     super.key,
     required this.txt1,
     required this.txt2,
     required this.careerCategoryId,
   });
+  final state = Get.find<Karir2Controller>();
+  callData() async {
+    return await state.getSlider(careerCategoryId);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final homestate = Get.find<HomeController>();
     final PageController controller =
         PageController(initialPage: 0, viewportFraction: 0.7);
-    final state = Get.find<Karir2Controller>();
-    state.getSlider(careerCategoryId);
-    final dataParse = state.dataKarir;
     return Container(
       width: 500.w,
       color: const Color.fromARGB(26, 182, 182, 182),
@@ -44,31 +49,38 @@ class KarirSlider2 extends StatelessWidget {
           ),
           SizedBox(height: 2.h),
           SizedBox(
-            height: 12.h,
-            child: Obx(() {
-              if (state.isLoadingDataKarir.isTrue) {
-                return const LoadingProccess();
-              } else {
-                if (dataParse.isNotEmpty) {
-                  return PageView.builder(
-                      controller: controller,
-                      itemCount: dataParse.length,
-                      onPageChanged: (i) {
-                        if (state.currentPage.value <= state.lastPage.value) {
-                          if (i == (dataParse.length - 1)) {
-                            state.getSlider(careerCategoryId);
+              height: 12.h,
+              child: FutureBuilder(
+                future: callData(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return PageView.builder(
+                        controller: controller,
+                        itemCount: state.dataKarir.length,
+                        onPageChanged: (i) {
+                          if (state.currentPage.value <= state.lastPage.value) {
+                            if (i == (state.dataKarir.length - 1)) {
+                              state.getSlider(careerCategoryId);
+                            }
                           }
-                        }
-                      },
-                      itemBuilder: (context, index) => CardKarir(
-                          text: dataParse[index].name,
-                          idSubKategoriKarir: dataParse[index].id));
-                } else {
-                  return const Center(child: Text('Tidak ada data!'));
-                }
-              }
-            }),
-          )
+                        },
+                        itemBuilder: (context, index) => CardKarir(
+                            text: state.dataKarir[index].name,
+                            idSubKategoriKarir: state.dataKarir[index].id));
+                  } else {
+                    return const LoadingProccess();
+                  }
+                },
+              )),
+          Obx(() => homestate.surveyKarir2.isTrue
+              ? Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 10),
+                  child: SurveyKarir(
+                    urutan: 2,
+                    idKategoriKarir: homestate.listclientKarir[1].id,
+                  ),
+                )
+              : SizedBox(height: 5.h)),
         ],
       ),
     );

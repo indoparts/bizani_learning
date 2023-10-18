@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 
 import '../../../controllers/home_controller.dart';
 
-class Survey extends StatelessWidget {
+class SurveyKursus extends StatelessWidget {
   final int idKategoriKursus;
   final int urutan;
-  const Survey({Key? key, required this.idKategoriKursus, required this.urutan})
+  const SurveyKursus(
+      {Key? key, required this.idKategoriKursus, required this.urutan})
       : super(key: key);
 
   @override
@@ -18,7 +19,7 @@ class Survey extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text(
-            'Apakah rekomendasi ini relevan?',
+            'Apakah rekomendasi kursus ini relevan?',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           Row(
@@ -33,7 +34,7 @@ class Survey extends StatelessWidget {
                     color: Colors.black,
                   ),
                   onPressed: () =>
-                      state.postSurvey('y', idKategoriKursus, urutan),
+                      state.postSurveyKursus('y', idKategoriKursus, urutan),
                 ),
               ),
               const SizedBox(width: 10),
@@ -47,7 +48,7 @@ class Survey extends StatelessWidget {
                     color: Colors.black,
                   ),
                   onPressed: () =>
-                      state.postSurvey('n', idKategoriKursus, urutan),
+                      state.postSurveyKursus('n', idKategoriKursus, urutan),
                 ),
               ),
             ],

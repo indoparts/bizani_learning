@@ -48,17 +48,23 @@ class HomeProvider extends GetConnect {
     return data;
   }
 
-  Future cekSurvey(int idKategoriKursus) async {
+  Future cekSurvey(int idKategoriKursus, String type) async {
     final response = await get(
-        "/client-classification/set-client-learning-satisfaction/$idKategoriKursus");
+        "/client-classification/set-client-learning-satisfaction/$idKategoriKursus/$type");
     return response;
   }
 
-  Future postSurvey(String v, int idKategoriKursus) async {
+  Future postSurvey(String v, int idKategoriKursus, String type) async {
     var datapost =
         jsonEncode({'input': v, 'learning_category_id': idKategoriKursus});
     final response = await post(
-        "/client-classification/set-client-learning-satisfaction", datapost);
+        "/client-classification/set-client-learning-satisfaction/$type",
+        datapost);
+    return response;
+  }
+
+  Future getKursusCategoryAll() async {
+    final response = await get("/learning-category/index");
     return response;
   }
 }

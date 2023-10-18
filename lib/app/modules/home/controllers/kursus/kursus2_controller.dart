@@ -12,7 +12,7 @@ class Kursus2Controller extends GetxController {
   var carouselclientKursusCurrentPage = 1.obs;
   var carouselclientKursusLastPage = 0.obs;
 
-  void getSliderKursus(int idCategory) async {
+  Future getSliderKursus(int idCategory) async {
     try {
       isLoadingCarouselKursus(true);
       final response = await provider.getKursusMaterial(
@@ -23,6 +23,7 @@ class Kursus2Controller extends GetxController {
       carouselclientKursus.addAllIf(fetch.isNotEmpty, fetch);
       carouselclientKursusLastPage(response['meta']['last_page']);
       carouselclientKursusCurrentPage++;
+      return fetch;
     } catch (e) {
       Get.showSnackbar(
         GetSnackBar(
